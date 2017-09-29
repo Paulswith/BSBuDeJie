@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  BSTabBarViewController.h
 //  BSBuDeJie
 //
 //  Created by v_ljiayili(李嘉艺) on 2017/9/27.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface BSTabBarViewController : UITabBarController
 
 @end
-
