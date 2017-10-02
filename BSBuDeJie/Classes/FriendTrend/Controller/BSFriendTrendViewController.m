@@ -7,9 +7,11 @@
 //
 
 #import "BSFriendTrendViewController.h"
-#import "UIColor+RandomColor.h"
+#import "BSAddNavigationBtn.h"
+#import "BSLoginViewController.h"
 
 @interface BSFriendTrendViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *loginBtn;
 
 @end
 
@@ -17,22 +19,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor randomColor];
+    [_loginBtn addTarget:self action:@selector(loginTap) forControlEvents:UIControlEventTouchDown];
+    UIView *leftView = [BSAddNavigationBtn addNaviBtnWithNormalImageName:@"friendsRecommentIcon"
+                                   highLightImageName:@"friendsRecommentIcon-click"];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftView];
+    self.navigationItem.title = @"我的关注";
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)loginTap {
+    [self presentViewController:[BSLoginViewController new] animated:YES completion:nil];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

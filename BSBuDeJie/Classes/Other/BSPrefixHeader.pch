@@ -1,0 +1,33 @@
+//
+//  BSPrefixHeader.pch
+//  BSBuDeJie
+//
+//  Created by Dobby on 2017/10/2.
+//  Copyright © 2017年 Dobby. All rights reserved.
+//
+
+#ifndef BSPrefixHeader_pch
+#define BSPrefixHeader_pch
+
+
+
+//-------------------分类-----------------------
+#ifdef __OBJC__// 区分语言 if
+#define BSColor(r,g,b) [UIColor colorWithRed:(r)/256.0 green:(g)/256.0 blue:(b)/256.0 alpha:1]
+#define screenW [UIScreen mainScreen].bounds.size.width
+#define screenH [UIScreen mainScreen].bounds.size.height
+#import "UIView+Frame.h"
+#endif
+//-------------------分类^end-------------------
+
+
+//-------------------LOG-----------------------
+#ifdef DEBUG
+# define BSLog(fmt, ...) NSLog((@"[fun:%s]" "[line:%d] \n" fmt), __FUNCTION__, __LINE__, ##__VA_ARGS__);
+#else
+# define BSLog(...);
+#endif
+//-------------------LOG^end-------------------
+
+
+#endif /* BSPrefixHeader_pch */

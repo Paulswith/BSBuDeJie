@@ -9,7 +9,6 @@
 #import "UIImage+Catogory.h"
 
 @implementation UIImage (Frame)
-
 - (CGFloat)width {
     return self.size.width;
 }

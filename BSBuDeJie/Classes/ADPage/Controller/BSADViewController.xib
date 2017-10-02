@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BSADViewController">
+            <connections>
+                <outlet property="ADPlaceHolder" destination="p1p-dY-06O" id="5e7-st-BT2"/>
+                <outlet property="countTime" destination="PQR-8M-5wE" id="h87-BS-njb"/>
+                <outlet property="luanchImageView" destination="yQN-II-Tl2" id="hza-wV-Trz"/>
+                <outlet property="view" destination="iN0-l3-epB" id="5ZY-a1-UcT"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yQN-II-Tl2" userLabel="luachImageView">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p1p-dY-06O" userLabel="ADPlaceHolder">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" red="0.42592939349999998" green="0.98997454490000003" blue="1" alpha="0.12288182218309859" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PQR-8M-5wE">
+                    <rect key="frame" x="275" y="20" width="80" height="32"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.40935849471830987" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="点击跳过:5"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="PQR-8M-5wE" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="3fb-E0-vX8"/>
+                <constraint firstItem="yQN-II-Tl2" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Ih2-iI-Gk2"/>
+                <constraint firstAttribute="bottom" secondItem="p1p-dY-06O" secondAttribute="bottom" id="KW6-Vb-eZV"/>
+                <constraint firstAttribute="trailing" secondItem="yQN-II-Tl2" secondAttribute="trailing" id="MKS-TR-CCA"/>
+                <constraint firstAttribute="trailing" secondItem="PQR-8M-5wE" secondAttribute="trailing" constant="20" id="Wbe-Bb-ca8"/>
+                <constraint firstAttribute="bottom" secondItem="yQN-II-Tl2" secondAttribute="bottom" id="auH-9b-Xyu"/>
+                <constraint firstItem="yQN-II-Tl2" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="cbV-ET-Jl1"/>
+                <constraint firstItem="p1p-dY-06O" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="j3o-Db-gir"/>
+                <constraint firstItem="p1p-dY-06O" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="s1A-Sr-DsN"/>
+                <constraint firstAttribute="trailing" secondItem="p1p-dY-06O" secondAttribute="trailing" id="z0n-bA-p66"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
