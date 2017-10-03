@@ -17,6 +17,8 @@
 #define screenW [UIScreen mainScreen].bounds.size.width
 #define screenH [UIScreen mainScreen].bounds.size.height
 #import "UIView+Frame.h"
+#import "UIImage+Catogory.h"
+
 #endif
 //-------------------分类^end-------------------
 

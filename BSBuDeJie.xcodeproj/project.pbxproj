@@ -39,6 +39,12 @@
 		C7E485041F811908001A3E45 /* BSStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7E485031F811908001A3E45 /* BSStartViewController.m */; };
 		C7E485081F811A2F001A3E45 /* BSSaveToolsBox.m in Sources */ = {isa = PBXBuildFile; fileRef = C7E485071F811A2F001A3E45 /* BSSaveToolsBox.m */; };
 		C7E485111F811C50001A3E45 /* BSADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7E485101F811C50001A3E45 /* BSADViewController.m */; };
+		C7F951441F833A8C0002CC7C /* BSLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7F951431F833A8C0002CC7C /* BSLoginViewController.xib */; };
+		C7F951471F833C800002CC7C /* BSLoginAndRegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F951461F833C800002CC7C /* BSLoginAndRegisterView.m */; };
+		C7F951491F833C8C0002CC7C /* BSLoginAndRegisterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7F951481F833C8C0002CC7C /* BSLoginAndRegisterView.xib */; };
+		C7F9514C1F8360710002CC7C /* BSQuickLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F9514B1F8360710002CC7C /* BSQuickLogin.m */; };
+		C7F9514E1F83607D0002CC7C /* BSQuickLogin.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7F9514D1F83607D0002CC7C /* BSQuickLogin.xib */; };
+		C7F951541F8367530002CC7C /* BSHeadBottomBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F951531F8367530002CC7C /* BSHeadBottomBtn.m */; };
 		C7FFF7D01F82AEDF00F9B859 /* BSFriendTrendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7FFF7CF1F82AEDF00F9B859 /* BSFriendTrendViewController.xib */; };
 		C7FFF7D91F82B43000F9B859 /* BSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7FFF7D81F82B43000F9B859 /* BSLoginViewController.m */; };
 /* End PBXBuildFile section */
@@ -108,6 +114,15 @@
 		C7E4850E1F811C3D001A3E45 /* zhanwei.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zhanwei.h; sourceTree = "<group>"; };
 		C7E4850F1F811C50001A3E45 /* BSADViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSADViewController.h; sourceTree = "<group>"; };
 		C7E485101F811C50001A3E45 /* BSADViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSADViewController.m; sourceTree = "<group>"; };
+		C7F951431F833A8C0002CC7C /* BSLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSLoginViewController.xib; sourceTree = "<group>"; };
+		C7F951451F833C800002CC7C /* BSLoginAndRegisterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSLoginAndRegisterView.h; sourceTree = "<group>"; };
+		C7F951461F833C800002CC7C /* BSLoginAndRegisterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSLoginAndRegisterView.m; sourceTree = "<group>"; };
+		C7F951481F833C8C0002CC7C /* BSLoginAndRegisterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSLoginAndRegisterView.xib; sourceTree = "<group>"; };
+		C7F9514A1F8360710002CC7C /* BSQuickLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSQuickLogin.h; sourceTree = "<group>"; };
+		C7F9514B1F8360710002CC7C /* BSQuickLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSQuickLogin.m; sourceTree = "<group>"; };
+		C7F9514D1F83607D0002CC7C /* BSQuickLogin.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSQuickLogin.xib; sourceTree = "<group>"; };
+		C7F951521F8367530002CC7C /* BSHeadBottomBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSHeadBottomBtn.h; sourceTree = "<group>"; };
+		C7F951531F8367530002CC7C /* BSHeadBottomBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSHeadBottomBtn.m; sourceTree = "<group>"; };
 		C7FFF7CF1F82AEDF00F9B859 /* BSFriendTrendViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSFriendTrendViewController.xib; sourceTree = "<group>"; };
 		C7FFF7D41F82AEEE00F9B859 /* zhanwei.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zhanwei.h; sourceTree = "<group>"; };
 		C7FFF7D61F82AEEE00F9B859 /* zhanwei.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zhanwei.h; sourceTree = "<group>"; };
@@ -387,6 +402,8 @@
 				C73207671F80DC9F00D5379C /* BSAddNavigationBtn.m */,
 				C7E485061F811A2F001A3E45 /* BSSaveToolsBox.h */,
 				C7E485071F811A2F001A3E45 /* BSSaveToolsBox.m */,
+				C7F951521F8367530002CC7C /* BSHeadBottomBtn.h */,
+				C7F951531F8367530002CC7C /* BSHeadBottomBtn.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -582,6 +599,13 @@
 			children = (
 				C7FFF7D71F82B43000F9B859 /* BSLoginViewController.h */,
 				C7FFF7D81F82B43000F9B859 /* BSLoginViewController.m */,
+				C7F951431F833A8C0002CC7C /* BSLoginViewController.xib */,
+				C7F951451F833C800002CC7C /* BSLoginAndRegisterView.h */,
+				C7F951461F833C800002CC7C /* BSLoginAndRegisterView.m */,
+				C7F951481F833C8C0002CC7C /* BSLoginAndRegisterView.xib */,
+				C7F9514A1F8360710002CC7C /* BSQuickLogin.h */,
+				C7F9514B1F8360710002CC7C /* BSQuickLogin.m */,
+				C7F9514D1F83607D0002CC7C /* BSQuickLogin.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -665,12 +689,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7F951491F833C8C0002CC7C /* BSLoginAndRegisterView.xib in Resources */,
+				C7F951441F833A8C0002CC7C /* BSLoginViewController.xib in Resources */,
 				C7141A7D1F81E8F800883E2A /* LaunchImage.png in Resources */,
 				C7FFF7D01F82AEDF00F9B859 /* BSFriendTrendViewController.xib in Resources */,
 				C7141A791F81E8F800883E2A /* LaunchImage-568h@2x.png in Resources */,
 				C7141A7A1F81E8F800883E2A /* LaunchImage-700@2x.png in Resources */,
 				C7141A7C1F81E8F800883E2A /* LaunchImage-800-Portrait-736h@3x.png in Resources */,
 				C7141A7F1F81EA1D00883E2A /* BSADViewController.xib in Resources */,
+				C7F9514E1F83607D0002CC7C /* BSQuickLogin.xib in Resources */,
 				C78809091F825FDB002F2D90 /* BSTableViewCell.xib in Resources */,
 				923865E41F7B4BA700ABD2DF /* LaunchScreen.storyboard in Resources */,
 				C7141A7B1F81E8F800883E2A /* LaunchImage-800-667h@2x.png in Resources */,
@@ -734,6 +761,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7E484F71F80ED93001A3E45 /* BSNavigationController.m in Sources */,
+				C7F9514C1F8360710002CC7C /* BSQuickLogin.m in Sources */,
 				923866051F7B951B00ABD2DF /* main.m in Sources */,
 				C7E485111F811C50001A3E45 /* BSADViewController.m in Sources */,
 				9238660D1F7B987E00ABD2DF /* BSFriendTrendViewController.m in Sources */,
@@ -745,6 +773,7 @@
 				9238661D1F7B9B1F00ABD2DF /* BSTabBarViewController.m in Sources */,
 				C78809011F823184002F2D90 /* BSMyFollowViewController.m in Sources */,
 				923866041F7B951B00ABD2DF /* AppDelegate.m in Sources */,
+				C7F951471F833C800002CC7C /* BSLoginAndRegisterView.m in Sources */,
 				C7E485011F80FA15001A3E45 /* BSSettingController.m in Sources */,
 				C7141A821F81F76200883E2A /* BSAdItem.m in Sources */,
 				C78809081F825FDB002F2D90 /* BSTableViewCell.m in Sources */,
@@ -752,6 +781,7 @@
 				9238660A1F7B985E00ABD2DF /* BSEssenceViewController.m in Sources */,
 				92CB53801F7E3FB60074709F /* UIImage+Catogory.m in Sources */,
 				C78809041F825CD6002F2D90 /* BSFollowItem.m in Sources */,
+				C7F951541F8367530002CC7C /* BSHeadBottomBtn.m in Sources */,
 				923866101F7B98A600ABD2DF /* BSNewPostViewController.m in Sources */,
 				C7E484F21F80E75F001A3E45 /* BSMineViewController.m in Sources */,
 				92CB53811F7E3FB60074709F /* UIView+Frame.m in Sources */,
