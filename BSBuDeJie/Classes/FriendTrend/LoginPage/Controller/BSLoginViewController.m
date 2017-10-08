@@ -34,9 +34,8 @@
      
      */
     _loginViewCons.constant = (_loginViewCons.constant == 0 ?  -_loginLargeView.width/2 : 0);
-//    BSLog(@"after - constant:%f",_loginViewCons.constant);
     [UIView animateWithDuration:0.5 animations:^{
-        [self.view layoutIfNeeded];
+        [self.view layoutIfNeeded];  //重新绘制
     }];
 }
 

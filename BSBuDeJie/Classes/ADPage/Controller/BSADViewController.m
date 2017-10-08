@@ -27,13 +27,15 @@
 @end
 
 
+/*
+ 1 一开始让imageview在上方, 若是拉到数据,则销毁imageview
+ */
 
 @implementation BSADViewController
 #pragma mark - 该图作为显示在占位图上的Imageview
 - (UIImageView *)adImageView {
     if (!_adImageView) {
         _adImageView = [[UIImageView alloc] init];
-        [self.ADPlaceHolder addSubview:_adImageView];
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(adImageViewTap)];
         [_adImageView addGestureRecognizer:tap];
         _adImageView.userInteractionEnabled = YES;
@@ -49,31 +51,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 #warning 还没做屏幕适配
-    self.luanchImageView.image = [UIImage imageNamed:@"LaunchImage-800-667h"];
+    _luanchImageView.image = [UIImage imageNamed:@"LaunchImage-800-667h"];
     [self setAdContent];
-    _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countTimeDo) userInfo:nil repeats:YES];
-    [_countTime addTarget:self action:@selector(jumpMainController) forControlEvents:UIControlEventTouchDown];
 }
 - (void)countTimeDo {
-    static NSInteger countTime = 5;
+    static NSInteger countTime = 3;
+    --countTime;
     if (countTime == 0) {
-//        [_timer invalidate]; // 销毁定时器
         [self jumpMainController];
     }
     [self.countTime setTitle:[NSString stringWithFormat:@"点击跳过:%ld",countTime] forState:UIControlStateNormal];
-    countTime --;
 }
 // 跳转主控制器
 - (void)jumpMainController {
-//    [UIView animateWithDuration:0
-//                          delay:0
-//                        options:0
-//                     animations:^{}
-//                     completion:^(BOOL finished) {
-//                         [UIApplication sharedApplication].keyWindow.rootViewController = [BSTabBarViewController new];
-//                         //当前无转场动画
-//                     }];
-    [_timer invalidate]; // 销毁定时器
+    if (_timer) {[_timer invalidate]; }// 销毁定时器
     [UIApplication sharedApplication].keyWindow.rootViewController = [BSTabBarViewController new];
 }
 
@@ -85,18 +76,43 @@
     parameter[@"code2"] = paraArgv;
     
     [manager GET:url parameters:parameter progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        // 1先写到本地看看具体的取参
         NSDictionary *adDict = [responseObject[@"ad"] firstObject];   // 取出字典部分
         _item =  [BSAdItem mj_objectWithKeyValues:adDict];  //转模型
-//        CGFloat height = screenW / _item.w * _item.h;  // 高比高 宽比宽
         BSLog(@"广告url:%@",_item.w_picurl);
-        self.adImageView.frame = CGRectMake(0, 0, screenW, screenH);
-        [_adImageView sd_setImageWithURL:[NSURL URLWithString:_item.w_picurl]]; //SDImage设置图片
+        if ([_item.w_picurl hasPrefix:@"http"]) {
+            BSLog(@"no nil");
+            [self setAdViewWithURL:_item.w_picurl];
+            _luanchImageView = nil;
+            _luanchImageView.alpha = 0;
+        }else {
+            BSLog(@"nil");
+            _adImageView = nil;
+            [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(jumpMainController) userInfo:nil repeats:NO];
+        }
+        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         BSLog(@"error: %@",error);
     }];
 }
 
-
+- (void)setAdViewWithURL:(NSString *)url {
+    if ([url hasPrefix:@"http"]) {
+        BSLog(@"no nil");
+        self.adImageView.frame = CGRectMake(0, 0, screenW, screenH);
+        [_adImageView sd_setImageWithURL:[NSURL URLWithString:url]]; //SDImage设置图片
+        [self.ADPlaceHolder addSubview:_adImageView];
+        //添加倒计时
+        _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countTimeDo) userInfo:nil repeats:YES];
+        [_countTime addTarget:self action:@selector(jumpMainController) forControlEvents:UIControlEventTouchDown];
+        //清空启动页
+        _luanchImageView = nil;
+        _luanchImageView.alpha = 0;
+    }else {
+        BSLog(@"nil");
+        _adImageView = nil;
+        [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(jumpMainController) userInfo:nil repeats:NO];
+    }
+    
+}
 
 @end

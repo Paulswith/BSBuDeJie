@@ -33,12 +33,21 @@
 		C78809041F825CD6002F2D90 /* BSFollowItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C78809031F825CD6002F2D90 /* BSFollowItem.m */; };
 		C78809081F825FDB002F2D90 /* BSTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C78809061F825FDB002F2D90 /* BSTableViewCell.m */; };
 		C78809091F825FDB002F2D90 /* BSTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C78809071F825FDB002F2D90 /* BSTableViewCell.xib */; };
+		C7D9563B1F8A380100A26021 /* BSMineViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7D9563A1F8A380100A26021 /* BSMineViewController.storyboard */; };
+		C7D9563F1F8A41AA00A26021 /* BSCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7D9563D1F8A41AA00A26021 /* BSCollectionViewCell.m */; };
+		C7D956401F8A41AA00A26021 /* BSCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7D9563E1F8A41AA00A26021 /* BSCollectionViewCell.xib */; };
+		C7D956431F8A518800A26021 /* BSMineCollectionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C7D956421F8A518800A26021 /* BSMineCollectionItem.m */; };
+		C7D956451F8A7EC200A26021 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7D956441F8A7EC200A26021 /* WebKit.framework */; };
+		C7D956481F8A7EFC00A26021 /* BSBrowerController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7D956471F8A7EFC00A26021 /* BSBrowerController.m */; };
+		C7D9564A1F8A7F1000A26021 /* BSBrowerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7D956491F8A7F1000A26021 /* BSBrowerController.xib */; };
 		C7E484F21F80E75F001A3E45 /* BSMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7E484F11F80E75F001A3E45 /* BSMineViewController.m */; };
 		C7E484F71F80ED93001A3E45 /* BSNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7E484F61F80ED93001A3E45 /* BSNavigationController.m */; };
 		C7E485011F80FA15001A3E45 /* BSSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7E485001F80FA15001A3E45 /* BSSettingController.m */; };
 		C7E485041F811908001A3E45 /* BSStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7E485031F811908001A3E45 /* BSStartViewController.m */; };
 		C7E485081F811A2F001A3E45 /* BSSaveToolsBox.m in Sources */ = {isa = PBXBuildFile; fileRef = C7E485071F811A2F001A3E45 /* BSSaveToolsBox.m */; };
 		C7E485111F811C50001A3E45 /* BSADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7E485101F811C50001A3E45 /* BSADViewController.m */; };
+		C7F829AD1F89C2EA0037AA1F /* UITextField+BSTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F829AC1F89C2EA0037AA1F /* UITextField+BSTextField.m */; };
+		C7F829B01F89C8EE0037AA1F /* BSTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F829AF1F89C8EE0037AA1F /* BSTextField.m */; };
 		C7F951441F833A8C0002CC7C /* BSLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7F951431F833A8C0002CC7C /* BSLoginViewController.xib */; };
 		C7F951471F833C800002CC7C /* BSLoginAndRegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F951461F833C800002CC7C /* BSLoginAndRegisterView.m */; };
 		C7F951491F833C8C0002CC7C /* BSLoginAndRegisterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7F951481F833C8C0002CC7C /* BSLoginAndRegisterView.xib */; };
@@ -97,10 +106,18 @@
 		C78809051F825FDB002F2D90 /* BSTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSTableViewCell.h; sourceTree = "<group>"; };
 		C78809061F825FDB002F2D90 /* BSTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTableViewCell.m; sourceTree = "<group>"; };
 		C78809071F825FDB002F2D90 /* BSTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSTableViewCell.xib; sourceTree = "<group>"; };
+		C7D9563A1F8A380100A26021 /* BSMineViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BSMineViewController.storyboard; sourceTree = "<group>"; };
+		C7D9563C1F8A41AA00A26021 /* BSCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSCollectionViewCell.h; sourceTree = "<group>"; };
+		C7D9563D1F8A41AA00A26021 /* BSCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSCollectionViewCell.m; sourceTree = "<group>"; };
+		C7D9563E1F8A41AA00A26021 /* BSCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSCollectionViewCell.xib; sourceTree = "<group>"; };
+		C7D956411F8A518800A26021 /* BSMineCollectionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSMineCollectionItem.h; sourceTree = "<group>"; };
+		C7D956421F8A518800A26021 /* BSMineCollectionItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSMineCollectionItem.m; sourceTree = "<group>"; };
+		C7D956441F8A7EC200A26021 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		C7D956461F8A7EFB00A26021 /* BSBrowerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSBrowerController.h; sourceTree = "<group>"; };
+		C7D956471F8A7EFC00A26021 /* BSBrowerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSBrowerController.m; sourceTree = "<group>"; };
+		C7D956491F8A7F1000A26021 /* BSBrowerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSBrowerController.xib; sourceTree = "<group>"; };
 		C7E484F01F80E75F001A3E45 /* BSMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSMineViewController.h; sourceTree = "<group>"; };
 		C7E484F11F80E75F001A3E45 /* BSMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSMineViewController.m; sourceTree = "<group>"; };
-		C7E484F31F80E771001A3E45 /* zhanwei.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = zhanwei.h; sourceTree = "<group>"; };
-		C7E484F41F80E777001A3E45 /* zhanwei.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = zhanwei.h; sourceTree = "<group>"; };
 		C7E484F51F80ED93001A3E45 /* BSNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSNavigationController.h; sourceTree = "<group>"; };
 		C7E484F61F80ED93001A3E45 /* BSNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSNavigationController.m; sourceTree = "<group>"; };
 		C7E484FC1F80F9FB001A3E45 /* zhanwei.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zhanwei.h; sourceTree = "<group>"; };
@@ -114,6 +131,10 @@
 		C7E4850E1F811C3D001A3E45 /* zhanwei.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zhanwei.h; sourceTree = "<group>"; };
 		C7E4850F1F811C50001A3E45 /* BSADViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSADViewController.h; sourceTree = "<group>"; };
 		C7E485101F811C50001A3E45 /* BSADViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSADViewController.m; sourceTree = "<group>"; };
+		C7F829AB1F89C2EA0037AA1F /* UITextField+BSTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+BSTextField.h"; sourceTree = "<group>"; };
+		C7F829AC1F89C2EA0037AA1F /* UITextField+BSTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+BSTextField.m"; sourceTree = "<group>"; };
+		C7F829AE1F89C8EE0037AA1F /* BSTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSTextField.h; sourceTree = "<group>"; };
+		C7F829AF1F89C8EE0037AA1F /* BSTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTextField.m; sourceTree = "<group>"; };
 		C7F951431F833A8C0002CC7C /* BSLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSLoginViewController.xib; sourceTree = "<group>"; };
 		C7F951451F833C800002CC7C /* BSLoginAndRegisterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSLoginAndRegisterView.h; sourceTree = "<group>"; };
 		C7F951461F833C800002CC7C /* BSLoginAndRegisterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSLoginAndRegisterView.m; sourceTree = "<group>"; };
@@ -135,6 +156,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7D956451F8A7EC200A26021 /* WebKit.framework in Frameworks */,
 				8F51742FC15A359E705B29B2 /* libPods-BSBuDeJie.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -145,6 +167,7 @@
 		78CAFF7EE0125F9CB5129E71 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C7D956441F8A7EC200A26021 /* WebKit.framework */,
 				5A76DF346B2755F9BA7A6757 /* libPods-BSBuDeJie.a */,
 			);
 			name = Frameworks;
@@ -391,6 +414,8 @@
 				92CB537F1F7E3FB60074709F /* UIView+Frame.m */,
 				92CB53821F7E3FC30074709F /* UIColor+RandomColor.h */,
 				92CB53831F7E3FC30074709F /* UIColor+RandomColor.m */,
+				C7F829AB1F89C2EA0037AA1F /* UITextField+BSTextField.h */,
+				C7F829AC1F89C2EA0037AA1F /* UITextField+BSTextField.m */,
 			);
 			path = category;
 			sourceTree = "<group>";
@@ -404,6 +429,9 @@
 				C7E485071F811A2F001A3E45 /* BSSaveToolsBox.m */,
 				C7F951521F8367530002CC7C /* BSHeadBottomBtn.h */,
 				C7F951531F8367530002CC7C /* BSHeadBottomBtn.m */,
+				C7D956461F8A7EFB00A26021 /* BSBrowerController.h */,
+				C7D956471F8A7EFC00A26021 /* BSBrowerController.m */,
+				C7D956491F8A7F1000A26021 /* BSBrowerController.xib */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -483,6 +511,7 @@
 			children = (
 				C7E484F01F80E75F001A3E45 /* BSMineViewController.h */,
 				C7E484F11F80E75F001A3E45 /* BSMineViewController.m */,
+				C7D9563A1F8A380100A26021 /* BSMineViewController.storyboard */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -490,7 +519,8 @@
 		C7E484EE1F80E73A001A3E45 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C7E484F31F80E771001A3E45 /* zhanwei.h */,
+				C7D956411F8A518800A26021 /* BSMineCollectionItem.h */,
+				C7D956421F8A518800A26021 /* BSMineCollectionItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -498,7 +528,9 @@
 		C7E484EF1F80E73A001A3E45 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C7E484F41F80E777001A3E45 /* zhanwei.h */,
+				C7D9563C1F8A41AA00A26021 /* BSCollectionViewCell.h */,
+				C7D9563D1F8A41AA00A26021 /* BSCollectionViewCell.m */,
+				C7D9563E1F8A41AA00A26021 /* BSCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -606,6 +638,8 @@
 				C7F9514A1F8360710002CC7C /* BSQuickLogin.h */,
 				C7F9514B1F8360710002CC7C /* BSQuickLogin.m */,
 				C7F9514D1F83607D0002CC7C /* BSQuickLogin.xib */,
+				C7F829AE1F89C8EE0037AA1F /* BSTextField.h */,
+				C7F829AF1F89C8EE0037AA1F /* BSTextField.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -689,6 +723,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7D956401F8A41AA00A26021 /* BSCollectionViewCell.xib in Resources */,
+				C7D9564A1F8A7F1000A26021 /* BSBrowerController.xib in Resources */,
 				C7F951491F833C8C0002CC7C /* BSLoginAndRegisterView.xib in Resources */,
 				C7F951441F833A8C0002CC7C /* BSLoginViewController.xib in Resources */,
 				C7141A7D1F81E8F800883E2A /* LaunchImage.png in Resources */,
@@ -696,6 +732,7 @@
 				C7141A791F81E8F800883E2A /* LaunchImage-568h@2x.png in Resources */,
 				C7141A7A1F81E8F800883E2A /* LaunchImage-700@2x.png in Resources */,
 				C7141A7C1F81E8F800883E2A /* LaunchImage-800-Portrait-736h@3x.png in Resources */,
+				C7D9563B1F8A380100A26021 /* BSMineViewController.storyboard in Resources */,
 				C7141A7F1F81EA1D00883E2A /* BSADViewController.xib in Resources */,
 				C7F9514E1F83607D0002CC7C /* BSQuickLogin.xib in Resources */,
 				C78809091F825FDB002F2D90 /* BSTableViewCell.xib in Resources */,
@@ -762,10 +799,14 @@
 			files = (
 				C7E484F71F80ED93001A3E45 /* BSNavigationController.m in Sources */,
 				C7F9514C1F8360710002CC7C /* BSQuickLogin.m in Sources */,
+				C7D956431F8A518800A26021 /* BSMineCollectionItem.m in Sources */,
+				C7F829B01F89C8EE0037AA1F /* BSTextField.m in Sources */,
 				923866051F7B951B00ABD2DF /* main.m in Sources */,
 				C7E485111F811C50001A3E45 /* BSADViewController.m in Sources */,
 				9238660D1F7B987E00ABD2DF /* BSFriendTrendViewController.m in Sources */,
+				C7D9563F1F8A41AA00A26021 /* BSCollectionViewCell.m in Sources */,
 				92CB53841F7E3FC30074709F /* UIColor+RandomColor.m in Sources */,
+				C7F829AD1F89C2EA0037AA1F /* UITextField+BSTextField.m in Sources */,
 				C7E485041F811908001A3E45 /* BSStartViewController.m in Sources */,
 				923866161F7B98ED00ABD2DF /* BSPublishViewController.m in Sources */,
 				C732076B1F80DCB700D5379C /* BSTabBar.m in Sources */,
@@ -785,6 +826,7 @@
 				923866101F7B98A600ABD2DF /* BSNewPostViewController.m in Sources */,
 				C7E484F21F80E75F001A3E45 /* BSMineViewController.m in Sources */,
 				92CB53811F7E3FB60074709F /* UIView+Frame.m in Sources */,
+				C7D956481F8A7EFC00A26021 /* BSBrowerController.m in Sources */,
 				C7FFF7D91F82B43000F9B859 /* BSLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,8 +12,6 @@
 
 
 + (instancetype)quickLoginView {
-    BSQuickLogin *b = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:nil options:nil] firstObject];
-    BSLog(@"%@",b);
-    return b;
+    return  [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:nil options:nil] firstObject];
 }
 @end

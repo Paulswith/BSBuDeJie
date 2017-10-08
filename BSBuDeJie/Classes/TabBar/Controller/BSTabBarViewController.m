@@ -52,7 +52,9 @@
     [self addChildViewController:[self childViewControlName:[BSFriendTrendViewController new]
                                                       title:@"关注"
                                                   imageName:@"friendTrends"]];
-    [self addChildViewController:[self childViewControlName:[BSMineViewController new]
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:NSStringFromClass([BSMineViewController class]) bundle:nil];
+    BSMineViewController *mineVC =  [storyBoard instantiateInitialViewController];
+    [self addChildViewController:[self childViewControlName:mineVC
                                                       title:@"我"
                                                   imageName:@"me"]];
 }

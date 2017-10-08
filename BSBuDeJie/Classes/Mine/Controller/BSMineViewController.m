@@ -8,21 +8,140 @@
 //
 
 #import "BSMineViewController.h"
-#import "UIColor+RandomColor.h"
 #import "BSAddNavigationBtn.h"
 #import "BSSettingController.h"
+#import "BSCollectionViewCell.h"
+#import "BSMineCollectionItem.h"
+#import <AFNetworking/AFNetworking.h>
+#import <MJExtension/MJExtension.h>
+#import <SafariServices/SafariServices.h>
+#import "BSBrowerController.h"
 
-@interface BSMineViewController ()
+
+#pragma mark - 静态全局变量
+static NSString * const ID = @"cellID";
+static NSInteger const countOfLine = 4;
+static CGFloat const spaceOfColumn = 2; //列间距
+
+@interface BSMineViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
+
+@property (strong, nonatomic) NSMutableArray *mineItemGroup;
+@property (assign, nonatomic) CGFloat collectionItemHeight;
+@property (strong, nonatomic) UICollectionView *collectionView;
 
 @end
 
 @implementation BSMineViewController
-
+//- (void)viewDidAppear:(BOOL)animated {
+//    [super viewDidAppear:animated];
+//    _collectionView.scrollEnabled = NO; //无须滚动
+//}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor randomColor];
+    _mineItemGroup = [NSMutableArray array];
+    [self setupFooterView];
     [self setupRightBtnAndTitle];
+    [self loadCollectionViewData];
 }
+- (void)setupFooterView {
+    //流水布局处理
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    layout.minimumLineSpacing = 2;
+    layout.minimumInteritemSpacing = 2;
+    layout.itemSize = ({
+        NSInteger columnCountOfLine = countOfLine - 1; //几条竖线
+        //计算公式为, 减去列间距 / 行个数
+        CGFloat sizeWH = (screenW - columnCountOfLine * spaceOfColumn) /countOfLine;
+        CGSize size = CGSizeMake(sizeWH, sizeWH);
+        _collectionItemHeight = sizeWH;
+        size;
+        //函数式代码计算
+    });
+    //设置collectionView位置
+    _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, 0, 400) collectionViewLayout:layout];
+    _collectionView.backgroundColor = self.tableView.backgroundColor;
+    _collectionView.dataSource = self;
+    _collectionView.delegate = self;
+    _collectionView.scrollEnabled = NO; //无须滚动
+    _collectionView.alwaysBounceHorizontal = YES;
+    self.tableView.sectionHeaderHeight = 0;
+    self.tableView.sectionFooterHeight = 10;
+    self.tableView.contentInset = UIEdgeInsetsMake(-25, 0, 0, 0);  //日常处理tableView的自动inset偏移64  /挤出一个微笑/
+    self.tableView.tableFooterView = _collectionView;
+    //注册cell
+    UINib *nib = [UINib nibWithNibName:NSStringFromClass([BSCollectionViewCell class]) bundle:nil];
+    [_collectionView registerNib:nib forCellWithReuseIdentifier:ID];
+    
+}
+- (void)loadCollectionViewData {
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    NSString *minePageAPI = @"http://api.budejie.com/api/api_open.php";
+    NSDictionary *parameters = @{
+                                 @"a":@"square",
+                                 @"c":@"topic"
+                                 };
+    [manager GET:minePageAPI parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        _mineItemGroup = [BSMineCollectionItem mj_objectArrayWithKeyValuesArray:responseObject[@"square_list"]];
+        BSLog(@"MinePage -- success count:%ld",_mineItemGroup.count);
+        //拉取到数据后重新调整高度
+        _collectionView.height = ({
+            NSInteger row = (_mineItemGroup.count - 1)/countOfLine + 1;
+            row * _collectionItemHeight + row * spaceOfColumn; // 行数*高度 + 间距*行数
+        });
+        self.tableView.contentSize = CGSizeMake(0, CGRectGetMaxY(_collectionView.frame));
+        [self resoveEmpty]; //处理空挡
+        [_collectionView reloadData];
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        BSLog(@"MinePage -- failure:%@--url:%@",error,task.response.URL);
+    }];
+}
+- (void)resoveEmpty {
+    // 计算求余公式为: 总数/行数 % 行数
+    NSInteger remainCount = (_mineItemGroup.count / countOfLine) % countOfLine ;
+    // 若有余,则遍历增加空挡item
+    if (remainCount) {
+        for (NSInteger i=0; i<remainCount; i++) {
+            [_mineItemGroup addObject:[BSMineCollectionItem new]];
+        }
+    }
+}
+#pragma mark - UICollectionViewDataSource
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return _mineItemGroup.count;
+}
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    BSCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ID forIndexPath:indexPath];
+    cell.cellOfMineItem = _mineItemGroup[indexPath.row];
+    return cell;
+}
+
+#pragma mark - UICollectionViewDelegate
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+//    BSMineCollectionItem *item = _mineItemGroup[indexPath.row];
+//    if ([item.url hasPrefix:@"http"]) {
+//        NSURL *jumpURL = [NSURL URLWithString:item.url];
+//        SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:jumpURL];
+//        self.navigationController.navigationBarHidden = YES;
+//        [self presentViewController:safariVC animated:YES completion:nil];
+//    }
+    
+    BSMineCollectionItem *item = _mineItemGroup[indexPath.row];
+    if ([item.url hasPrefix:@"http"]) {
+        BSBrowerController *brower = [[BSBrowerController alloc] init];
+        brower.url = item.url;
+        [self.navigationController pushViewController:brower animated:YES];
+    }
+    
+    
+    
+}
+
+#pragma mark - tableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES]; //取消选中
+}
+
 #pragma mark - setupRightBtnes
 - (void)setupRightBtnAndTitle {
     UIView *moonView = [BSAddNavigationBtn addNaviBtnWithNormalImageName:@"mine-moon-icon"
@@ -41,11 +160,17 @@
     
 }
 - (void)moonTouch {
+#warning moonSkinNone
     NSLog(@"%s",__func__);
 }
 - (void)settingTouch {
-//    NSLog(@"%s",__func__);
-//    self.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:[BSSettingController new] animated:YES];
 }
+
+
+
+
+
+
+
 @end
