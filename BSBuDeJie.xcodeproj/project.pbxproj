@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8F51742FC15A359E705B29B2 /* libPods-BSBuDeJie.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A76DF346B2755F9BA7A6757 /* libPods-BSBuDeJie.a */; };
+		920BA8A61F8B288900D05C77 /* BSSystemInfoTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 920BA8A51F8B288900D05C77 /* BSSystemInfoTool.m */; };
 		923865E11F7B4BA700ABD2DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 923865E01F7B4BA700ABD2DF /* Assets.xcassets */; };
 		923865E41F7B4BA700ABD2DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 923865E21F7B4BA700ABD2DF /* LaunchScreen.storyboard */; };
 		923866041F7B951B00ABD2DF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 923865FE1F7B951B00ABD2DF /* AppDelegate.m */; };
@@ -61,6 +62,8 @@
 /* Begin PBXFileReference section */
 		1D4691628ABA1D3EC763820B /* Pods-BSBuDeJie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSBuDeJie.release.xcconfig"; path = "Pods/Target Support Files/Pods-BSBuDeJie/Pods-BSBuDeJie.release.xcconfig"; sourceTree = "<group>"; };
 		5A76DF346B2755F9BA7A6757 /* libPods-BSBuDeJie.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BSBuDeJie.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		920BA8A41F8B288900D05C77 /* BSSystemInfoTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSSystemInfoTool.h; sourceTree = "<group>"; };
+		920BA8A51F8B288900D05C77 /* BSSystemInfoTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSSystemInfoTool.m; sourceTree = "<group>"; };
 		923865D11F7B4BA700ABD2DF /* BSBuDeJie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BSBuDeJie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		923865E01F7B4BA700ABD2DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		923865E31F7B4BA700ABD2DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -432,6 +435,8 @@
 				C7D956461F8A7EFB00A26021 /* BSBrowerController.h */,
 				C7D956471F8A7EFC00A26021 /* BSBrowerController.m */,
 				C7D956491F8A7F1000A26021 /* BSBrowerController.xib */,
+				920BA8A41F8B288900D05C77 /* BSSystemInfoTool.h */,
+				920BA8A51F8B288900D05C77 /* BSSystemInfoTool.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -814,6 +819,7 @@
 				C78809011F823184002F2D90 /* BSMyFollowViewController.m in Sources */,
 				923866041F7B951B00ABD2DF /* AppDelegate.m in Sources */,
 				C7F951471F833C800002CC7C /* BSLoginAndRegisterView.m in Sources */,
+				920BA8A61F8B288900D05C77 /* BSSystemInfoTool.m in Sources */,
 				C7E485011F80FA15001A3E45 /* BSSettingController.m in Sources */,
 				C7141A821F81F76200883E2A /* BSAdItem.m in Sources */,
 				92CEA2601F8B094E008C620F /* BSStartViewController.m in Sources */,

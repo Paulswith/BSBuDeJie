@@ -10,7 +10,6 @@
 
 @interface BSBrowerController : UIViewController
 
-
-@property (strong, nonatomic) NSString *url;
+@property (strong, nonatomic) NSURL *url;
 
 @end

@@ -18,6 +18,7 @@
 #define screenH [UIScreen mainScreen].bounds.size.height
 #import "UIView+Frame.h"
 #import "UIImage+Catogory.h"
+#import "BSSystemInfoTool.h"
 
 #endif
 //-------------------分类^end-------------------

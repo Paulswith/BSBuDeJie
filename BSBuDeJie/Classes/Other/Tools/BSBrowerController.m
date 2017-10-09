@@ -19,23 +19,24 @@
 
 @end
 
-
 static NSString * const canGoBack = @"canGoBack";
 static NSString * const canGoForward = @"canGoForward";
 static NSString * const estimatedProgress = @"estimatedProgress";
 static NSString * const title = @"title";//URL
 static NSString * const URL = @"URL";
+
 @implementation BSBrowerController
 - (void)viewDidLoad {
     [super viewDidLoad];
     // 加载逻辑
     _webView = [[WKWebView alloc] init];
     [_webContentView addSubview:_webView];
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:_url]];
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:_url];
     [_webView loadRequest:request];
     //监听
     [self addObserver];
 }
+
 #pragma mark - observer
 - (void)addObserver {
     [_webView addObserver:self forKeyPath:canGoBack options:NSKeyValueObservingOptionNew context:nil];
