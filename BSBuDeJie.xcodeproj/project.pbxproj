@@ -42,6 +42,7 @@
 		C7D956451F8A7EC200A26021 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7D956441F8A7EC200A26021 /* WebKit.framework */; };
 		C7D956481F8A7EFC00A26021 /* BSBrowerController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7D956471F8A7EFC00A26021 /* BSBrowerController.m */; };
 		C7D9564A1F8A7F1000A26021 /* BSBrowerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7D956491F8A7F1000A26021 /* BSBrowerController.xib */; };
+		C7DF66C41F8D305200C66BA3 /* BSFileTools.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DF66C31F8D305200C66BA3 /* BSFileTools.m */; };
 		C7E484F21F80E75F001A3E45 /* BSMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7E484F11F80E75F001A3E45 /* BSMineViewController.m */; };
 		C7E484F71F80ED93001A3E45 /* BSNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7E484F61F80ED93001A3E45 /* BSNavigationController.m */; };
 		C7E485011F80FA15001A3E45 /* BSSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7E485001F80FA15001A3E45 /* BSSettingController.m */; };
@@ -121,6 +122,8 @@
 		C7D956461F8A7EFB00A26021 /* BSBrowerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSBrowerController.h; sourceTree = "<group>"; };
 		C7D956471F8A7EFC00A26021 /* BSBrowerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSBrowerController.m; sourceTree = "<group>"; };
 		C7D956491F8A7F1000A26021 /* BSBrowerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSBrowerController.xib; sourceTree = "<group>"; };
+		C7DF66C21F8D305200C66BA3 /* BSFileTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSFileTools.h; sourceTree = "<group>"; };
+		C7DF66C31F8D305200C66BA3 /* BSFileTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSFileTools.m; sourceTree = "<group>"; };
 		C7E484F01F80E75F001A3E45 /* BSMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSMineViewController.h; sourceTree = "<group>"; };
 		C7E484F11F80E75F001A3E45 /* BSMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSMineViewController.m; sourceTree = "<group>"; };
 		C7E484F51F80ED93001A3E45 /* BSNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSNavigationController.h; sourceTree = "<group>"; };
@@ -437,6 +440,8 @@
 				C7D956491F8A7F1000A26021 /* BSBrowerController.xib */,
 				920BA8A41F8B288900D05C77 /* BSSystemInfoTool.h */,
 				920BA8A51F8B288900D05C77 /* BSSystemInfoTool.m */,
+				C7DF66C21F8D305200C66BA3 /* BSFileTools.h */,
+				C7DF66C31F8D305200C66BA3 /* BSFileTools.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -819,6 +824,7 @@
 				C78809011F823184002F2D90 /* BSMyFollowViewController.m in Sources */,
 				923866041F7B951B00ABD2DF /* AppDelegate.m in Sources */,
 				C7F951471F833C800002CC7C /* BSLoginAndRegisterView.m in Sources */,
+				C7DF66C41F8D305200C66BA3 /* BSFileTools.m in Sources */,
 				920BA8A61F8B288900D05C77 /* BSSystemInfoTool.m in Sources */,
 				C7E485011F80FA15001A3E45 /* BSSettingController.m in Sources */,
 				C7141A821F81F76200883E2A /* BSAdItem.m in Sources */,
