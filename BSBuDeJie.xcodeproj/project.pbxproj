@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		8F51742FC15A359E705B29B2 /* libPods-BSBuDeJie.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A76DF346B2755F9BA7A6757 /* libPods-BSBuDeJie.a */; };
 		920BA8A61F8B288900D05C77 /* BSSystemInfoTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 920BA8A51F8B288900D05C77 /* BSSystemInfoTool.m */; };
+		921F83D01F9145D100305AA7 /* BSAllTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 921F83CF1F9145D100305AA7 /* BSAllTableView.m */; };
+		921F83D31F9145EB00305AA7 /* BSEssenceTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 921F83D21F9145EB00305AA7 /* BSEssenceTableView.m */; };
+		921F83D61F9145FC00305AA7 /* BSVideoTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 921F83D51F9145FC00305AA7 /* BSVideoTableView.m */; };
+		921F83D91F91460700305AA7 /* BSPhotoTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 921F83D81F91460700305AA7 /* BSPhotoTableView.m */; };
+		921F83DC1F91461000305AA7 /* BSJokeTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 921F83DB1F91461000305AA7 /* BSJokeTableView.m */; };
 		923865E11F7B4BA700ABD2DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 923865E01F7B4BA700ABD2DF /* Assets.xcassets */; };
 		923865E41F7B4BA700ABD2DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 923865E21F7B4BA700ABD2DF /* LaunchScreen.storyboard */; };
 		923866041F7B951B00ABD2DF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 923865FE1F7B951B00ABD2DF /* AppDelegate.m */; };
@@ -65,6 +70,19 @@
 		5A76DF346B2755F9BA7A6757 /* libPods-BSBuDeJie.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BSBuDeJie.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		920BA8A41F8B288900D05C77 /* BSSystemInfoTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSSystemInfoTool.h; sourceTree = "<group>"; };
 		920BA8A51F8B288900D05C77 /* BSSystemInfoTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSSystemInfoTool.m; sourceTree = "<group>"; };
+		921F83CA1F91447200305AA7 /* zhanwei.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zhanwei.h; sourceTree = "<group>"; };
+		921F83CC1F91447200305AA7 /* zhanwei.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zhanwei.h; sourceTree = "<group>"; };
+		921F83CD1F91459100305AA7 /* zhanwei.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = zhanwei.h; sourceTree = "<group>"; };
+		921F83CE1F9145D100305AA7 /* BSAllTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSAllTableView.h; sourceTree = "<group>"; };
+		921F83CF1F9145D100305AA7 /* BSAllTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSAllTableView.m; sourceTree = "<group>"; };
+		921F83D11F9145EB00305AA7 /* BSEssenceTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSEssenceTableView.h; sourceTree = "<group>"; };
+		921F83D21F9145EB00305AA7 /* BSEssenceTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSEssenceTableView.m; sourceTree = "<group>"; };
+		921F83D41F9145FC00305AA7 /* BSVideoTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSVideoTableView.h; sourceTree = "<group>"; };
+		921F83D51F9145FC00305AA7 /* BSVideoTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSVideoTableView.m; sourceTree = "<group>"; };
+		921F83D71F91460700305AA7 /* BSPhotoTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSPhotoTableView.h; sourceTree = "<group>"; };
+		921F83D81F91460700305AA7 /* BSPhotoTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSPhotoTableView.m; sourceTree = "<group>"; };
+		921F83DA1F91461000305AA7 /* BSJokeTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJokeTableView.h; sourceTree = "<group>"; };
+		921F83DB1F91461000305AA7 /* BSJokeTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJokeTableView.m; sourceTree = "<group>"; };
 		923865D11F7B4BA700ABD2DF /* BSBuDeJie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BSBuDeJie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		923865E01F7B4BA700ABD2DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		923865E31F7B4BA700ABD2DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -179,6 +197,49 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		921F83C71F91447200305AA7 /* EssenceTopsController */ = {
+			isa = PBXGroup;
+			children = (
+				921F83C81F91447200305AA7 /* Controller */,
+				921F83C91F91447200305AA7 /* Model */,
+				921F83CB1F91447200305AA7 /* View */,
+			);
+			path = EssenceTopsController;
+			sourceTree = "<group>";
+		};
+		921F83C81F91447200305AA7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				921F83CE1F9145D100305AA7 /* BSAllTableView.h */,
+				921F83CF1F9145D100305AA7 /* BSAllTableView.m */,
+				921F83D11F9145EB00305AA7 /* BSEssenceTableView.h */,
+				921F83D21F9145EB00305AA7 /* BSEssenceTableView.m */,
+				921F83D41F9145FC00305AA7 /* BSVideoTableView.h */,
+				921F83D51F9145FC00305AA7 /* BSVideoTableView.m */,
+				921F83D71F91460700305AA7 /* BSPhotoTableView.h */,
+				921F83D81F91460700305AA7 /* BSPhotoTableView.m */,
+				921F83DA1F91461000305AA7 /* BSJokeTableView.h */,
+				921F83DB1F91461000305AA7 /* BSJokeTableView.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		921F83C91F91447200305AA7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				921F83CA1F91447200305AA7 /* zhanwei.h */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		921F83CB1F91447200305AA7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				921F83CC1F91447200305AA7 /* zhanwei.h */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		923865C81F7B4BA700ABD2DF = {
 			isa = PBXGroup;
 			children = (
@@ -226,6 +287,7 @@
 		923865EC1F7B951B00ABD2DF /* Essence */ = {
 			isa = PBXGroup;
 			children = (
+				921F83C71F91447200305AA7 /* EssenceTopsController */,
 				923865ED1F7B951B00ABD2DF /* Controller */,
 				923865EE1F7B951B00ABD2DF /* Model */,
 				923865EF1F7B951B00ABD2DF /* View */,
@@ -253,6 +315,7 @@
 		923865EF1F7B951B00ABD2DF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				921F83CD1F91459100305AA7 /* zhanwei.h */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -812,14 +875,18 @@
 				C7D956431F8A518800A26021 /* BSMineCollectionItem.m in Sources */,
 				C7F829B01F89C8EE0037AA1F /* BSTextField.m in Sources */,
 				923866051F7B951B00ABD2DF /* main.m in Sources */,
+				921F83DC1F91461000305AA7 /* BSJokeTableView.m in Sources */,
 				C7E485111F811C50001A3E45 /* BSADViewController.m in Sources */,
+				921F83D01F9145D100305AA7 /* BSAllTableView.m in Sources */,
 				9238660D1F7B987E00ABD2DF /* BSFriendTrendViewController.m in Sources */,
 				C7D9563F1F8A41AA00A26021 /* BSCollectionViewCell.m in Sources */,
 				92CB53841F7E3FC30074709F /* UIColor+RandomColor.m in Sources */,
 				C7F829AD1F89C2EA0037AA1F /* UITextField+BSTextField.m in Sources */,
 				923866161F7B98ED00ABD2DF /* BSPublishViewController.m in Sources */,
+				921F83D61F9145FC00305AA7 /* BSVideoTableView.m in Sources */,
 				C732076B1F80DCB700D5379C /* BSTabBar.m in Sources */,
 				C7E485081F811A2F001A3E45 /* BSSaveToolsBox.m in Sources */,
+				921F83D31F9145EB00305AA7 /* BSEssenceTableView.m in Sources */,
 				9238661D1F7B9B1F00ABD2DF /* BSTabBarViewController.m in Sources */,
 				C78809011F823184002F2D90 /* BSMyFollowViewController.m in Sources */,
 				923866041F7B951B00ABD2DF /* AppDelegate.m in Sources */,
@@ -834,6 +901,7 @@
 				9238660A1F7B985E00ABD2DF /* BSEssenceViewController.m in Sources */,
 				92CB53801F7E3FB60074709F /* UIImage+Catogory.m in Sources */,
 				C78809041F825CD6002F2D90 /* BSFollowItem.m in Sources */,
+				921F83D91F91460700305AA7 /* BSPhotoTableView.m in Sources */,
 				C7F951541F8367530002CC7C /* BSHeadBottomBtn.m in Sources */,
 				923866101F7B98A600ABD2DF /* BSNewPostViewController.m in Sources */,
 				C7E484F21F80E75F001A3E45 /* BSMineViewController.m in Sources */,

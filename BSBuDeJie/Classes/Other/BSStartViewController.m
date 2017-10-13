@@ -42,7 +42,13 @@
     }
     return tabbarViewController;
      */
-    return [BSADViewController new];  //现在直接进入广告界面即可
+//    return [BSADViewController new];  //现在直接进入广告界面即可
+    
+#ifdef DEBUG
+    return [[BSTabBarViewController alloc] init];
+#else
+    return [[BSADViewController alloc] init];
+#endif
 }
 
 @end
