@@ -55,12 +55,8 @@
 
 #pragma mark - 添加加号按钮
 - (void)layoutSubviews {
-//    NSLog(@"%s",__func__);
     [super layoutSubviews];
-//    NSLog(@"布局");
     NSInteger itemCount = self.items.count + 1;
-    //    NSLog(@"%ld",itemCount);
-    //    NSLog(@"%@",NSStringFromCGRect(self.frame));
     CGFloat itemWidth = self.width/itemCount;
     CGFloat itemHeight = self.height;
     NSInteger i = 0;
@@ -71,6 +67,7 @@
                 i++;
             }
             tabbarBtn.frame = CGRectMake(i * itemWidth, 0, itemWidth, itemHeight);
+            tabbarBtn.tag = i;
             i++;
         }
     }

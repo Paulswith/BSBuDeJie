@@ -6,8 +6,8 @@
 //  Copyright © 2017年 Dobby. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BSEssenceBisicTableViewController.h"
 
-@interface BSPhotoTableView : UITableViewController
+@interface BSPhotoTableView : BSEssenceBisicTableViewController
 
 @end

@@ -10,7 +10,6 @@
 		8F51742FC15A359E705B29B2 /* libPods-BSBuDeJie.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A76DF346B2755F9BA7A6757 /* libPods-BSBuDeJie.a */; };
 		920BA8A61F8B288900D05C77 /* BSSystemInfoTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 920BA8A51F8B288900D05C77 /* BSSystemInfoTool.m */; };
 		921F83D01F9145D100305AA7 /* BSAllTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 921F83CF1F9145D100305AA7 /* BSAllTableView.m */; };
-		921F83D31F9145EB00305AA7 /* BSEssenceTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 921F83D21F9145EB00305AA7 /* BSEssenceTableView.m */; };
 		921F83D61F9145FC00305AA7 /* BSVideoTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 921F83D51F9145FC00305AA7 /* BSVideoTableView.m */; };
 		921F83D91F91460700305AA7 /* BSPhotoTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 921F83D81F91460700305AA7 /* BSPhotoTableView.m */; };
 		921F83DC1F91461000305AA7 /* BSJokeTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 921F83DB1F91461000305AA7 /* BSJokeTableView.m */; };
@@ -36,6 +35,9 @@
 		C7141A821F81F76200883E2A /* BSAdItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C7141A811F81F76200883E2A /* BSAdItem.m */; };
 		C73207681F80DC9F00D5379C /* BSAddNavigationBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = C73207671F80DC9F00D5379C /* BSAddNavigationBtn.m */; };
 		C732076B1F80DCB700D5379C /* BSTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C732076A1F80DCB700D5379C /* BSTabBar.m */; };
+		C7547A2F1F93628500C45E68 /* BSEssenceBisicTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7547A2E1F93628500C45E68 /* BSEssenceBisicTableViewController.m */; };
+		C7547A321F93630000C45E68 /* BSSoundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7547A311F93630000C45E68 /* BSSoundViewController.m */; };
+		C7547A351F937FB400C45E68 /* BSFrequency.m in Sources */ = {isa = PBXBuildFile; fileRef = C7547A341F937FB400C45E68 /* BSFrequency.m */; };
 		C78809011F823184002F2D90 /* BSMyFollowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C78808FC1F823184002F2D90 /* BSMyFollowViewController.m */; };
 		C78809041F825CD6002F2D90 /* BSFollowItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C78809031F825CD6002F2D90 /* BSFollowItem.m */; };
 		C78809081F825FDB002F2D90 /* BSTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C78809061F825FDB002F2D90 /* BSTableViewCell.m */; };
@@ -75,8 +77,6 @@
 		921F83CD1F91459100305AA7 /* zhanwei.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = zhanwei.h; sourceTree = "<group>"; };
 		921F83CE1F9145D100305AA7 /* BSAllTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSAllTableView.h; sourceTree = "<group>"; };
 		921F83CF1F9145D100305AA7 /* BSAllTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSAllTableView.m; sourceTree = "<group>"; };
-		921F83D11F9145EB00305AA7 /* BSEssenceTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSEssenceTableView.h; sourceTree = "<group>"; };
-		921F83D21F9145EB00305AA7 /* BSEssenceTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSEssenceTableView.m; sourceTree = "<group>"; };
 		921F83D41F9145FC00305AA7 /* BSVideoTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSVideoTableView.h; sourceTree = "<group>"; };
 		921F83D51F9145FC00305AA7 /* BSVideoTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSVideoTableView.m; sourceTree = "<group>"; };
 		921F83D71F91460700305AA7 /* BSPhotoTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSPhotoTableView.h; sourceTree = "<group>"; };
@@ -122,6 +122,12 @@
 		C73207671F80DC9F00D5379C /* BSAddNavigationBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSAddNavigationBtn.m; sourceTree = "<group>"; };
 		C73207691F80DCB700D5379C /* BSTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSTabBar.h; sourceTree = "<group>"; };
 		C732076A1F80DCB700D5379C /* BSTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTabBar.m; sourceTree = "<group>"; };
+		C7547A2D1F93628500C45E68 /* BSEssenceBisicTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSEssenceBisicTableViewController.h; sourceTree = "<group>"; };
+		C7547A2E1F93628500C45E68 /* BSEssenceBisicTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSEssenceBisicTableViewController.m; sourceTree = "<group>"; };
+		C7547A301F93630000C45E68 /* BSSoundViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSSoundViewController.h; sourceTree = "<group>"; };
+		C7547A311F93630000C45E68 /* BSSoundViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSSoundViewController.m; sourceTree = "<group>"; };
+		C7547A331F937FB400C45E68 /* BSFrequency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSFrequency.h; sourceTree = "<group>"; };
+		C7547A341F937FB400C45E68 /* BSFrequency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSFrequency.m; sourceTree = "<group>"; };
 		C783BA301F80DC1A0045D902 /* zhanwei.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = zhanwei.h; sourceTree = "<group>"; };
 		C78808FB1F823184002F2D90 /* BSMyFollowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSMyFollowViewController.h; sourceTree = "<group>"; };
 		C78808FC1F823184002F2D90 /* BSMyFollowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSMyFollowViewController.m; sourceTree = "<group>"; };
@@ -210,16 +216,18 @@
 		921F83C81F91447200305AA7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C7547A2D1F93628500C45E68 /* BSEssenceBisicTableViewController.h */,
+				C7547A2E1F93628500C45E68 /* BSEssenceBisicTableViewController.m */,
 				921F83CE1F9145D100305AA7 /* BSAllTableView.h */,
 				921F83CF1F9145D100305AA7 /* BSAllTableView.m */,
-				921F83D11F9145EB00305AA7 /* BSEssenceTableView.h */,
-				921F83D21F9145EB00305AA7 /* BSEssenceTableView.m */,
 				921F83D41F9145FC00305AA7 /* BSVideoTableView.h */,
 				921F83D51F9145FC00305AA7 /* BSVideoTableView.m */,
 				921F83D71F91460700305AA7 /* BSPhotoTableView.h */,
 				921F83D81F91460700305AA7 /* BSPhotoTableView.m */,
 				921F83DA1F91461000305AA7 /* BSJokeTableView.h */,
 				921F83DB1F91461000305AA7 /* BSJokeTableView.m */,
+				C7547A301F93630000C45E68 /* BSSoundViewController.h */,
+				C7547A311F93630000C45E68 /* BSSoundViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -400,6 +408,8 @@
 				923865FF1F7B951B00ABD2DF /* main.m */,
 				923865E51F7B4BA700ABD2DF /* Info.plist */,
 				C7141A831F81FA4C00883E2A /* BSPrefixHeader.pch */,
+				C7547A331F937FB400C45E68 /* BSFrequency.h */,
+				C7547A341F937FB400C45E68 /* BSFrequency.m */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -884,9 +894,11 @@
 				C7F829AD1F89C2EA0037AA1F /* UITextField+BSTextField.m in Sources */,
 				923866161F7B98ED00ABD2DF /* BSPublishViewController.m in Sources */,
 				921F83D61F9145FC00305AA7 /* BSVideoTableView.m in Sources */,
+				C7547A2F1F93628500C45E68 /* BSEssenceBisicTableViewController.m in Sources */,
+				C7547A351F937FB400C45E68 /* BSFrequency.m in Sources */,
+				C7547A321F93630000C45E68 /* BSSoundViewController.m in Sources */,
 				C732076B1F80DCB700D5379C /* BSTabBar.m in Sources */,
 				C7E485081F811A2F001A3E45 /* BSSaveToolsBox.m in Sources */,
-				921F83D31F9145EB00305AA7 /* BSEssenceTableView.m in Sources */,
 				9238661D1F7B9B1F00ABD2DF /* BSTabBarViewController.m in Sources */,
 				C78809011F823184002F2D90 /* BSMyFollowViewController.m in Sources */,
 				923866041F7B951B00ABD2DF /* AppDelegate.m in Sources */,

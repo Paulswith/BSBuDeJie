@@ -11,7 +11,7 @@
 
 
 
-//-------------------分类-----------------------
+//-------------------头文件-----------------------
 #ifdef __OBJC__// 区分语言 if
 #define BSColor(r,g,b) [UIColor colorWithRed:(r)/256.0 green:(g)/256.0 blue:(b)/256.0 alpha:1]
 #define screenW [UIScreen mainScreen].bounds.size.width
@@ -20,14 +20,15 @@
 #import "UIImage+Catogory.h"
 #import "UIColor+RandomColor.h"
 #import "BSSystemInfoTool.h"
+#import "BSFrequency.h"
 
 #endif
-//-------------------分类^end-------------------
+//-------------------头文件^end-------------------
 
 
 //-------------------LOG-----------------------
 #ifdef DEBUG
-# define BSLog(fmt, ...) NSLog((@"[fun:%s]" "[line:%d] \n" fmt), __FUNCTION__, __LINE__, ##__VA_ARGS__);
+# define BSLog(fmt, ...) NSLog((@"%s" " /%dL\\ => " fmt), __FUNCTION__, __LINE__, ##__VA_ARGS__);
 #else
 # define BSLog(...);
 #endif
