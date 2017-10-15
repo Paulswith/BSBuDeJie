@@ -10,7 +10,7 @@
 
 static NSString * const ID = @"AllCell";
 static NSString * const getDataClues = @"上拉加载可更多";
-static NSString * const loadingClues = @"上拉加载可更多";
+static NSString * const loadingClues = @"小的正在加载中...";
 static CGFloat const topInset = 35;
 static CGFloat const navigationInset = 64;
 static CGFloat const bottomInset = 49 + navigationInset;
