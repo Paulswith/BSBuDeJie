@@ -13,4 +13,6 @@
 NSString * const BSTabBarRepeastDidTap = @"BSTabBarRepeastDidTap";
 
 NSString * const BSTabBarNotiKey = @"BSTabBarNotiKey";
+
+CGFloat const BSEssenseHeaderViewHeight = 35;
 @end
