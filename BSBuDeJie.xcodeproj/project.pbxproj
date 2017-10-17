@@ -26,6 +26,8 @@
 		92CB53811F7E3FB60074709F /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 92CB537F1F7E3FB60074709F /* UIView+Frame.m */; };
 		92CB53841F7E3FC30074709F /* UIColor+RandomColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 92CB53831F7E3FC30074709F /* UIColor+RandomColor.m */; };
 		92CEA2601F8B094E008C620F /* BSStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92CEA25F1F8B094E008C620F /* BSStartViewController.m */; };
+		92F9E4221F96043800CDE92A /* BSRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F9E4211F96043800CDE92A /* BSRefreshView.m */; };
+		92F9E4251F960BF900CDE92A /* BSLoadMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F9E4241F960BF900CDE92A /* BSLoadMoreView.m */; };
 		C7141A791F81E8F800883E2A /* LaunchImage-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7141A741F81E8F800883E2A /* LaunchImage-568h@2x.png */; };
 		C7141A7A1F81E8F800883E2A /* LaunchImage-700@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7141A751F81E8F800883E2A /* LaunchImage-700@2x.png */; };
 		C7141A7B1F81E8F800883E2A /* LaunchImage-800-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7141A761F81E8F800883E2A /* LaunchImage-800-667h@2x.png */; };
@@ -73,7 +75,6 @@
 		920BA8A41F8B288900D05C77 /* BSSystemInfoTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSSystemInfoTool.h; sourceTree = "<group>"; };
 		920BA8A51F8B288900D05C77 /* BSSystemInfoTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSSystemInfoTool.m; sourceTree = "<group>"; };
 		921F83CA1F91447200305AA7 /* zhanwei.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zhanwei.h; sourceTree = "<group>"; };
-		921F83CC1F91447200305AA7 /* zhanwei.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zhanwei.h; sourceTree = "<group>"; };
 		921F83CD1F91459100305AA7 /* zhanwei.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = zhanwei.h; sourceTree = "<group>"; };
 		921F83CE1F9145D100305AA7 /* BSAllTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSAllTableView.h; sourceTree = "<group>"; };
 		921F83CF1F9145D100305AA7 /* BSAllTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSAllTableView.m; sourceTree = "<group>"; };
@@ -108,6 +109,10 @@
 		92CB53831F7E3FC30074709F /* UIColor+RandomColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+RandomColor.m"; sourceTree = "<group>"; };
 		92CEA25E1F8B094E008C620F /* BSStartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BSStartViewController.h; path = BSBuDeJie/Classes/Other/BSStartViewController.h; sourceTree = SOURCE_ROOT; };
 		92CEA25F1F8B094E008C620F /* BSStartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSStartViewController.m; path = BSBuDeJie/Classes/Other/BSStartViewController.m; sourceTree = SOURCE_ROOT; };
+		92F9E4201F96043800CDE92A /* BSRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSRefreshView.h; sourceTree = "<group>"; };
+		92F9E4211F96043800CDE92A /* BSRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSRefreshView.m; sourceTree = "<group>"; };
+		92F9E4231F960BF900CDE92A /* BSLoadMoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSLoadMoreView.h; sourceTree = "<group>"; };
+		92F9E4241F960BF900CDE92A /* BSLoadMoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSLoadMoreView.m; sourceTree = "<group>"; };
 		B995312AF3AD99964CD0C1BE /* Pods-BSBuDeJie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSBuDeJie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BSBuDeJie/Pods-BSBuDeJie.debug.xcconfig"; sourceTree = "<group>"; };
 		C7141A741F81E8F800883E2A /* LaunchImage-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-568h@2x.png"; sourceTree = "<group>"; };
 		C7141A751F81E8F800883E2A /* LaunchImage-700@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-700@2x.png"; sourceTree = "<group>"; };
@@ -243,7 +248,10 @@
 		921F83CB1F91447200305AA7 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				921F83CC1F91447200305AA7 /* zhanwei.h */,
+				92F9E4201F96043800CDE92A /* BSRefreshView.h */,
+				92F9E4211F96043800CDE92A /* BSRefreshView.m */,
+				92F9E4231F960BF900CDE92A /* BSLoadMoreView.h */,
+				92F9E4241F960BF900CDE92A /* BSLoadMoreView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -840,7 +848,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		C34F5BB684DADA411C3F58DD /* [CP] Embed Pods Frameworks */ = {
@@ -890,6 +898,7 @@
 				921F83D01F9145D100305AA7 /* BSAllTableView.m in Sources */,
 				9238660D1F7B987E00ABD2DF /* BSFriendTrendViewController.m in Sources */,
 				C7D9563F1F8A41AA00A26021 /* BSCollectionViewCell.m in Sources */,
+				92F9E4221F96043800CDE92A /* BSRefreshView.m in Sources */,
 				92CB53841F7E3FC30074709F /* UIColor+RandomColor.m in Sources */,
 				C7F829AD1F89C2EA0037AA1F /* UITextField+BSTextField.m in Sources */,
 				923866161F7B98ED00ABD2DF /* BSPublishViewController.m in Sources */,
@@ -901,6 +910,7 @@
 				C7E485081F811A2F001A3E45 /* BSSaveToolsBox.m in Sources */,
 				9238661D1F7B9B1F00ABD2DF /* BSTabBarViewController.m in Sources */,
 				C78809011F823184002F2D90 /* BSMyFollowViewController.m in Sources */,
+				92F9E4251F960BF900CDE92A /* BSLoadMoreView.m in Sources */,
 				923866041F7B951B00ABD2DF /* AppDelegate.m in Sources */,
 				C7F951471F833C800002CC7C /* BSLoginAndRegisterView.m in Sources */,
 				C7DF66C41F8D305200C66BA3 /* BSFileTools.m in Sources */,
