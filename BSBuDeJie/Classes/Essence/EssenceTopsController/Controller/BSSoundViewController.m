@@ -7,6 +7,8 @@
 //
 
 #import "BSSoundViewController.h"
+#import "BSRefreshView.h"
+
 
 @interface BSSoundViewController ()
 
@@ -14,4 +16,8 @@
 
 @implementation BSSoundViewController
 
+- (void)doubleReloadData {
+//    [self.tableView reloadData];
+    [self.tableView.mj_header beginRefreshing];
+}
 @end

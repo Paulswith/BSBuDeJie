@@ -44,6 +44,7 @@
 		C78809041F825CD6002F2D90 /* BSFollowItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C78809031F825CD6002F2D90 /* BSFollowItem.m */; };
 		C78809081F825FDB002F2D90 /* BSTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C78809061F825FDB002F2D90 /* BSTableViewCell.m */; };
 		C78809091F825FDB002F2D90 /* BSTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C78809071F825FDB002F2D90 /* BSTableViewCell.xib */; };
+		C7BA09E21F9674ED0011518E /* BSEssenceView.m in Sources */ = {isa = PBXBuildFile; fileRef = C7BA09E11F9674ED0011518E /* BSEssenceView.m */; };
 		C7D9563B1F8A380100A26021 /* BSMineViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7D9563A1F8A380100A26021 /* BSMineViewController.storyboard */; };
 		C7D9563F1F8A41AA00A26021 /* BSCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7D9563D1F8A41AA00A26021 /* BSCollectionViewCell.m */; };
 		C7D956401F8A41AA00A26021 /* BSCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7D9563E1F8A41AA00A26021 /* BSCollectionViewCell.xib */; };
@@ -75,7 +76,6 @@
 		920BA8A41F8B288900D05C77 /* BSSystemInfoTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSSystemInfoTool.h; sourceTree = "<group>"; };
 		920BA8A51F8B288900D05C77 /* BSSystemInfoTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSSystemInfoTool.m; sourceTree = "<group>"; };
 		921F83CA1F91447200305AA7 /* zhanwei.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zhanwei.h; sourceTree = "<group>"; };
-		921F83CD1F91459100305AA7 /* zhanwei.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = zhanwei.h; sourceTree = "<group>"; };
 		921F83CE1F9145D100305AA7 /* BSAllTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSAllTableView.h; sourceTree = "<group>"; };
 		921F83CF1F9145D100305AA7 /* BSAllTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSAllTableView.m; sourceTree = "<group>"; };
 		921F83D41F9145FC00305AA7 /* BSVideoTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSVideoTableView.h; sourceTree = "<group>"; };
@@ -141,6 +141,8 @@
 		C78809051F825FDB002F2D90 /* BSTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSTableViewCell.h; sourceTree = "<group>"; };
 		C78809061F825FDB002F2D90 /* BSTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTableViewCell.m; sourceTree = "<group>"; };
 		C78809071F825FDB002F2D90 /* BSTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSTableViewCell.xib; sourceTree = "<group>"; };
+		C7BA09E01F9674ED0011518E /* BSEssenceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSEssenceView.h; sourceTree = "<group>"; };
+		C7BA09E11F9674ED0011518E /* BSEssenceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSEssenceView.m; sourceTree = "<group>"; };
 		C7D9563A1F8A380100A26021 /* BSMineViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BSMineViewController.storyboard; sourceTree = "<group>"; };
 		C7D9563C1F8A41AA00A26021 /* BSCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSCollectionViewCell.h; sourceTree = "<group>"; };
 		C7D9563D1F8A41AA00A26021 /* BSCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSCollectionViewCell.m; sourceTree = "<group>"; };
@@ -331,7 +333,8 @@
 		923865EF1F7B951B00ABD2DF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				921F83CD1F91459100305AA7 /* zhanwei.h */,
+				C7BA09E01F9674ED0011518E /* BSEssenceView.h */,
+				C7BA09E11F9674ED0011518E /* BSEssenceView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -894,6 +897,7 @@
 				C7F829B01F89C8EE0037AA1F /* BSTextField.m in Sources */,
 				923866051F7B951B00ABD2DF /* main.m in Sources */,
 				921F83DC1F91461000305AA7 /* BSJokeTableView.m in Sources */,
+				C7BA09E21F9674ED0011518E /* BSEssenceView.m in Sources */,
 				C7E485111F811C50001A3E45 /* BSADViewController.m in Sources */,
 				921F83D01F9145D100305AA7 /* BSAllTableView.m in Sources */,
 				9238660D1F7B987E00ABD2DF /* BSFriendTrendViewController.m in Sources */,

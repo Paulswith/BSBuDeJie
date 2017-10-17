@@ -7,12 +7,16 @@
 //
 
 #import "BSAllTableView.h"
+#import "BSRefreshView.h"
 
-
+static NSString * const ID = @"BSAllTableView";
 @interface BSAllTableView ()
 
 @end
 
 @implementation BSAllTableView
-
+- (void)doubleReloadData {
+//    [self.tableView reloadData];
+    [self.tableView.mj_header beginRefreshing];  //里面调用了setneedDisplay
+}
 @end

@@ -10,4 +10,6 @@
 
 @interface BSEssenceBisicTableViewController : UITableViewController
 
+- (void)doubleReloadData;  //双击刷新 交给子类来实现
+
 @end

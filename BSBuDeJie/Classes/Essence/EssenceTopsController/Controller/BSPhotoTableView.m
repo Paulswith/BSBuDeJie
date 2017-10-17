@@ -7,6 +7,8 @@
 //
 
 #import "BSPhotoTableView.h"
+#import "BSRefreshView.h"
+
 
 @interface BSPhotoTableView ()
 
@@ -14,4 +16,9 @@
 
 @implementation BSPhotoTableView
 
+
+- (void)doubleReloadData {
+//    [self.tableView reloadData];
+    [self.tableView.mj_header beginRefreshing];
+}
 @end

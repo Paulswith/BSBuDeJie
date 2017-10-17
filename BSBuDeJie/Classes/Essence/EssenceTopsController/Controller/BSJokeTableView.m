@@ -7,6 +7,8 @@
 //
 
 #import "BSJokeTableView.h"
+#import "BSRefreshView.h"
+
 
 @interface BSJokeTableView ()
 
@@ -14,4 +16,8 @@
 
 @implementation BSJokeTableView
 
+- (void)doubleReloadData {
+//    [self.tableView reloadData];
+    [self.tableView.mj_header beginRefreshing];
+}
 @end

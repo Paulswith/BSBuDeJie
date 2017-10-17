@@ -7,11 +7,17 @@
 //
 
 #import "BSVideoTableView.h"
+#import "BSRefreshView.h"
+
 
 @interface BSVideoTableView ()
 
 @end
 
 @implementation BSVideoTableView
+- (void)doubleReloadData {
+//    [self.tableView reloadData];
+    [self.tableView.mj_header beginRefreshing];
+}
 
 @end

@@ -16,6 +16,8 @@
 #import "BSPhotoTableView.h"
 #import "BSJokeTableView.h"
 #import "BSNavigationController.h"
+#import "BSEssenceBisicTableViewController.h"
+#import "BSEssenceView.h"
 
 
 #define View_Y CGRectGetMaxY(self.navigationController.navigationBar.frame)  //顶部按钮的Y值
@@ -28,6 +30,7 @@
 @property(strong,nonatomic) UIScrollView *scrollView; //底层的scrollView
 @property (strong, nonatomic) UIView *topBtnPlaceView;
 @property (strong, nonatomic) UIView *lineView;
+
 @end
 
 @implementation BSEssenceViewController
@@ -49,25 +52,15 @@
     UIViewController *infoVC = notication.userInfo[BSTabBarNotiKey];
     BOOL isSelfClass = [infoVC isKindOfClass:[self class]];
     if (isSelfClass) {
-        BSLog(@"isSelfClass");
+        //如果是当前控制器被双击则:
+        [[self getcurrentSubVCWithIndex:_selectBtn.tag] doubleReloadData];
     }
 }
 
 - (void)setupControlView {
     _topBtnVCArray = @[[BSAllTableView new],[BSVideoTableView new],[BSSoundViewController new],[BSPhotoTableView new],[BSJokeTableView new]];
-    _scrollView =  ({
-        UIScrollView *scroll = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, screenW, screenH)];
-        _scrollView.backgroundColor = [UIColor grayColor];
-        scroll.contentSize = CGSizeMake(_topBtnVCArray.count * screenW, 0);
-        scroll.showsHorizontalScrollIndicator = NO;
-        scroll.showsVerticalScrollIndicator = NO;
-        scroll.bounces = NO;
-        scroll.pagingEnabled = YES;
-        scroll.scrollEnabled = YES;
-        scroll.delegate = self;
-        scroll.backgroundColor = [UIColor grayColor];
-        scroll;
-    });
+    _scrollView =  [BSEssenceView essenceScrollViewWithWidth:_topBtnVCArray.count * screenW];
+    _scrollView.delegate = self;
     // 添加不同的五个控制器上去
     for (int insertI = 0; insertI < _topBtnVCArray.count; insertI ++) {
         UIViewController *ableView = _topBtnVCArray[insertI];
@@ -102,17 +95,18 @@
 }
 
 #pragma mark - ScrollViewdelegate
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    // 处理滚动的时候, 切换顶部按钮选中状态
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    //确实存在拖拽的情况, 再调用如下方法, 此代理才是正确的打开方式
     NSInteger indexTag = scrollView.contentOffset.x / screenW;
     UIButton *indexBtn = _topBtnPlaceView.subviews[indexTag];
     [self topBtnTapAction:indexBtn]; // 模仿点击按钮来实现
-//    BSLog(@"%@",NSStringFromCGRect(self.view.frame));
-//    BSLog(@"%@",NSStringFromCGRect(_scrollView.frame));
 }
 
 #pragma mark - 按钮的点击事件,根据tag判断
 - (void)topBtnTapAction:(UIButton *)btn {
+    if (btn == _selectBtn) {
+        [[self getcurrentSubVCWithIndex:btn.tag] doubleReloadData];
+    }
     //点击切换背景色的逻辑
     NSInteger tag =  btn.tag;
     if (tag > _topBtnVCArray.count) {
@@ -145,6 +139,11 @@
     UIImageView *titleImageView = [[UIImageView alloc] initWithImage:[UIImage imageNotRenderingWithName:@"MainTitle"]];
     [titleImageView sizeToFit];
     self.navigationItem.titleView = titleImageView;
+}
+
+
+- (BSEssenceBisicTableViewController *)getcurrentSubVCWithIndex:(NSInteger)index {
+    return _topBtnVCArray[index];
 }
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];

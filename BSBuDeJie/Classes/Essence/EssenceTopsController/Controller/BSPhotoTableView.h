@@ -9,5 +9,4 @@
 #import "BSEssenceBisicTableViewController.h"
 
 @interface BSPhotoTableView : BSEssenceBisicTableViewController
-
 @end

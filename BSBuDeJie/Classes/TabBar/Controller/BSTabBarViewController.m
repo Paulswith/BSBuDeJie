@@ -47,7 +47,7 @@
     if (_selectTabBar == tapBtn ) {
         //对当前控制器二次点击就抛通知
         BSNavigationController *navi = _childVC[self.selectedIndex];
-        BSLog(@"BSTabBarNotiKey = %@",navi);
+//        BSLog(@"BSTabBarNotiKey = %@",navi);
         [[NSNotificationCenter defaultCenter] postNotificationName:BSTabBarRepeastDidTap
                                                             object:nil userInfo:@{
                                                                                   BSTabBarNotiKey:navi,
