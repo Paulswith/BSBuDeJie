@@ -37,7 +37,7 @@
 - (void)setCellItems:(BSEssenceAllModel *)cellItems {
     _cellItems = cellItems;
     self.nameLabel.text = cellItems.screen_name;
-    [self.headImageView sd_setImageWithURL:[NSURL URLWithString:cellItems.profile_image] placeholderImage:[UIImage imageNotRenderingWithName:@"place"]];
+    [self.headImageView sd_setImageWithURL:[NSURL URLWithString:cellItems.profile_image] placeholderImage:[UIImage imageNotRenderingWithName:@"defaultUserIcon"]];
     [self.zanBtn setTitle:cellItems.love forState:UIControlStateNormal];
     [self.caiBtn setTitle:cellItems.hate forState:UIControlStateNormal];
     [self.shareBtn setTitle:cellItems.repost forState:UIControlStateNormal];
