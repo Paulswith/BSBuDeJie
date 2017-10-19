@@ -78,6 +78,7 @@ static NSString * const ID = @"cellALL";
     cell.cellItems = model;
     return cell;
 }
+//
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return _allModelArray[indexPath.row].text_height;
