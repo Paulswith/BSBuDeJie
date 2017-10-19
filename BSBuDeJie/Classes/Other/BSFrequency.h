@@ -15,5 +15,12 @@ UIKIT_EXTERN NSString * const BSTabBarRepeastDidTap;
 
 // tabbar通知的info-key
 UIKIT_EXTERN NSString * const BSTabBarNotiKey;
+
 UIKIT_EXTERN CGFloat const BSEssenseHeaderViewHeight;
+
+UIKIT_EXTERN NSString * const BSEssenceMaxTime;
+
+UIKIT_EXTERN NSString * const BSMainRUL;
+
+
 @end

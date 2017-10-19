@@ -34,6 +34,7 @@
 @end
 
 @implementation BSEssenceViewController
+
 - (void)viewDidLoad {
     // ABFLB2139966218
     [super viewDidLoad];
@@ -56,7 +57,6 @@
         [[self getcurrentSubVCWithIndex:_selectBtn.tag] doubleReloadData];
     }
 }
-
 - (void)setupControlView {
     _topBtnVCArray = @[[BSAllTableView new],[BSVideoTableView new],[BSSoundViewController new],[BSPhotoTableView new],[BSJokeTableView new]];
     _scrollView =  [BSEssenceView essenceScrollViewWithWidth:_topBtnVCArray.count * screenW];
@@ -69,18 +69,18 @@
     }
     [self.view addSubview:_scrollView];
 }
-
 - (void)setupTopSwitchView {
     // 按钮设置
     _topBtnTitleArray = @[@"全部",@"视频",@"声音",@"图片",@"段子"];
     _topBtnPlaceView =  [[UIView alloc] initWithFrame:CGRectMake(0, View_Y, screenW, 35)];
+    _topBtnPlaceView.backgroundColor = BSColor(224, 224, 224);
     CGFloat width = screenW/_topBtnTitleArray.count;
     for (int i=0; i < _topBtnTitleArray.count; i++) {
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         btn.tag = i;
         btn.frame = CGRectMake(width * i, 0, width, 35);
         [btn setTitle:_topBtnTitleArray[i] forState:UIControlStateNormal];
-        [btn setBackgroundColor:[UIColor colorWithWhite:0.f alpha:0.1]];
+//        [btn setBackgroundColor:[UIColor colorWithWhite:0.f alpha:0.1]];
         [btn addTarget:self action:@selector(topBtnTapAction:) forControlEvents:UIControlEventTouchDown];
         [_topBtnPlaceView addSubview:btn];
     }
@@ -94,7 +94,8 @@
     [self.view addSubview:_topBtnPlaceView];
 }
 
-#pragma mark - ScrollViewdelegate
+#pragma makr ---------------------
+#pragma mark - crollViewdelegate
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
     //确实存在拖拽的情况, 再调用如下方法, 此代理才是正确的打开方式
     NSInteger indexTag = scrollView.contentOffset.x / screenW;
@@ -140,7 +141,6 @@
     [titleImageView sizeToFit];
     self.navigationItem.titleView = titleImageView;
 }
-
 
 - (BSEssenceBisicTableViewController *)getcurrentSubVCWithIndex:(NSInteger)index {
     return _topBtnVCArray[index];

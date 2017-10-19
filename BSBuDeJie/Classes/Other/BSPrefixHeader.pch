@@ -21,6 +21,8 @@
 #import "UIColor+RandomColor.h"
 #import "BSSystemInfoTool.h"
 #import "BSFrequency.h"
+#import "BSSaveToolsBox.h"
+
 
 #endif
 //-------------------头文件^end-------------------

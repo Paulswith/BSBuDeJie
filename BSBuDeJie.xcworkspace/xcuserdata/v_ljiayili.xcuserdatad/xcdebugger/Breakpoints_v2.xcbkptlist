@@ -36,12 +36,42 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BSBuDeJie/Classes/Essence/EssenceTopsController/Controller/BSEssenceBisicTableViewController.m"
-            timestampString = "529938108.524433"
+            timestampString = "530009756.930524"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
-            landmarkName = "@implementation BSEssenceBisicTableViewController"
+            startingLineNumber = "126"
+            endingLineNumber = "126">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BSBuDeJie/Classes/Essence/EssenceTopsController/View/BSEssenceVideoCell.m"
+            timestampString = "530101681.237276"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "@implementation BSEssenceVideoCell"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BSBuDeJie/Classes/Essence/EssenceTopsController/View/BSEssenceVideoCell.m"
+            timestampString = "530101682.677563"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "@implementation BSEssenceVideoCell"
             landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>

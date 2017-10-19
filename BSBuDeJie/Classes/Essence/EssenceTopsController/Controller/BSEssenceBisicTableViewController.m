@@ -50,34 +50,24 @@ static CGFloat const bottomInset = topInset + tabBarHeight;   //顶部偏移量 
 
 //下啦和进入的时候调用
 - (void)loadNewData {
-    self.dataCount += 5;
-    __weak UITableView *tableView = self.tableView;
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [tableView reloadData];
-        [tableView.mj_header endRefreshing];
-    });
+    [self.tableView.mj_header endRefreshing];
 }
 // 上拉加载更多调用
 - (void)loadMoreData
 {
-    self.dataCount +=5;
-    __weak UITableView *tableView = self.tableView;
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [tableView reloadData];
-        [tableView.mj_footer endRefreshing];
-    });
+    [self.tableView.mj_footer endRefreshing];
 }
 
 #pragma mark - Table view data source
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.dataCount;
-}
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID forIndexPath:indexPath];
-    cell.textLabel.text=[NSString stringWithFormat:@"%@-%ld",NSStringFromClass([self class]),indexPath.row];
-    cell.backgroundColor = [UIColor randomColor];
-    return cell;
-}
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+//    return self.dataCount;
+//}
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID forIndexPath:indexPath];
+//    cell.textLabel.text=[NSString stringWithFormat:@"%@-%ld",NSStringFromClass([self class]),indexPath.row];
+//    cell.backgroundColor = [UIColor randomColor];
+//    return cell;
+//}
 
 #pragma mark - TableViewdelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

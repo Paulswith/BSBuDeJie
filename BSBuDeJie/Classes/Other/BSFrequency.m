@@ -15,4 +15,8 @@ NSString * const BSTabBarRepeastDidTap = @"BSTabBarRepeastDidTap";
 NSString * const BSTabBarNotiKey = @"BSTabBarNotiKey";
 
 CGFloat const BSEssenseHeaderViewHeight = 35;
+
+NSString * const BSEssenceMaxTime = @"BSEssenceMaxTime";
+
+NSString * const BSMainRUL = @"http://api.budejie.com/api/api_open.php";
 @end
