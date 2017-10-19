@@ -18,8 +18,6 @@ static CGFloat const tabBarHeight = 49;
 static CGFloat const bottomInset = topInset + tabBarHeight;   //顶部偏移量 + 底部tabbar 自行调整,来展示
 
 @interface BSEssenceBisicTableViewController ()
-//数据总源
-@property (assign, nonatomic) NSInteger dataCount;
 
 @end
 
@@ -27,15 +25,11 @@ static CGFloat const bottomInset = topInset + tabBarHeight;   //顶部偏移量 
 @implementation BSEssenceBisicTableViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationController.automaticallyAdjustsScrollViewInsets = NO;
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:ID];
-    CGFloat newTopInset = topInset - BSEssenseHeaderViewHeight;
-    self.tableView.contentInset = UIEdgeInsetsMake(newTopInset, 0, bottomInset, 0);   //下挪topView的间距 上挪tabBar的高度
-    self.tableView.scrollIndicatorInsets = self.tableView.contentInset; // 设置滚动条与tableView的内存的一致
+    [self setTableViewDetailInfo];
+    
     // 加载更多按钮
     [self setupLoadMoreFooterView];
     [self setupRefresingHeaderView];
-    self.dataCount = 20;
 }
 #pragma mark - 上下拉按钮
 - (void)setupRefresingHeaderView {
@@ -58,20 +52,27 @@ static CGFloat const bottomInset = topInset + tabBarHeight;   //顶部偏移量 
     [self.tableView.mj_footer endRefreshing];
 }
 
-#pragma mark - Table view data source
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//    return self.dataCount;
-//}
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID forIndexPath:indexPath];
-//    cell.textLabel.text=[NSString stringWithFormat:@"%@-%ld",NSStringFromClass([self class]),indexPath.row];
-//    cell.backgroundColor = [UIColor randomColor];
-//    return cell;
-//}
+//#pragma mark - Table view data source
+
 
 #pragma mark - TableViewdelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
+- (void)setTableViewDetailInfo {
+    /*tableView细节*/
+    self.navigationController.automaticallyAdjustsScrollViewInsets = NO;
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:ID];
+    CGFloat newTopInset = topInset - BSEssenseHeaderViewHeight;
+    //下挪topView的间距 上挪tabBar的高度
+    self.tableView.contentInset = UIEdgeInsetsMake(newTopInset, 0, bottomInset, 0);
+    // 设置滚动条与tableView的内容区域的一致
+    self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
+    /*背景相关*/
+    self.tableView.backgroundColor = BSColor(162, 162, 162);
+    UIImage *bgImage = [UIImage imageNotRenderingWithName:@"post_placeholderImage"];
+    self.tableView.backgroundView = [[UIImageView alloc] initWithImage:bgImage];
+
+}
 @end

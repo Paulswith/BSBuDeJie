@@ -19,5 +19,8 @@
 @property(strong,nonatomic) NSString *repost; //转发的数量
 @property(strong,nonatomic) NSString *hate; //踩的数量
 @property(strong,nonatomic) NSString *love; //收藏量- 赞吧
-//@property(strong,nonatomic) NSString *type; //类型
+@property(strong,nonatomic) NSString *type; //类型
+
+@property(assign,nonatomic) float text_height; //title
+//@property(strong,nonatomic) NSMutableArray<__kindof BSEssenceAllModel *> *text_heightArray; //存储cell的高度的数组
 @end

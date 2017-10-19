@@ -20,7 +20,7 @@
 static NSString * const ID = @"cellALL";
 @interface BSAllTableView ()
 
-@property(strong,nonatomic) NSMutableArray *allModelArray;
+@property(strong,nonatomic) NSMutableArray<__kindof BSEssenceAllModel *> *allModelArray;
 
 @end
 
@@ -30,7 +30,7 @@ static NSString * const ID = @"cellALL";
     UINib *registerNIb = [UINib nibWithNibName:NSStringFromClass([BSEssenceBaseCell class]) bundle:[NSBundle mainBundle]];
     [self.tableView registerNib:registerNIb forCellReuseIdentifier:ID];
     [self loadDataWithKey:newKey];
-    self.tableView.rowHeight = 250;
+//    self.tableView.rowHeight = 250;
 }
 #pragma mark - loadData 
 - (void)loadDataWithKey:(NSString *)key {
@@ -70,11 +70,22 @@ static NSString * const ID = @"cellALL";
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 //    BSEssenceBaseCell *cell = [tableView dequeueReusableCellWithIdentifier:ID forIndexPath:indexPath];
+#warning 思路 根据类型判断, 如果是A类型,直接让A类型返回一个方法View, 直接赋值即可\
+    但是高度可能要重新处理下,每个类需要针对此处理下. 可以自定义各自的xib, 声音xib下面是有最佳评论的,所以必须为uiview类型,让它自己处理好扔给我们就好
     
     BSEssenceBaseCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     BSEssenceAllModel *model = _allModelArray[indexPath.row];
     cell.cellItems = model;
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return _allModelArray[indexPath.row].text_height;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [super tableView:tableView didSelectRowAtIndexPath:indexPath];
+    BSEssenceAllModel *model = _allModelArray[indexPath.row];
+    NSLog(@"%@ // %f",model.text,model.text_height);
 }
 
 

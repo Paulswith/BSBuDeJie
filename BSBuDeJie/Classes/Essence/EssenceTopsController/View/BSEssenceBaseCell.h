@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UIView *contentPlaceHolderView; //内容占位View
 //NS_DESIGNATED_INITIALIZER
 // 让子类来实现具体的内容展示
+@property (weak, nonatomic) IBOutlet UILabel *infoTextLabel;
 
 //- (instancetype)initWithBaseCellFormXib;
 

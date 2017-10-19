@@ -12,11 +12,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="BSEssenceBaseCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="300" id="KGk-i7-Jjw" customClass="BSEssenceBaseCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="500"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="500"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d81-Ti-FeR">
@@ -63,10 +63,24 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Z1-5X-F2e">
-                        <rect key="frame" x="0.0" y="40" width="320" height="179.5"/>
+                        <rect key="frame" x="0.0" y="40" width="320" height="429.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="聊点啥子哟" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Vx-ob-kuJ">
+                                <rect key="frame" x="10" y="10" width="300" height="409.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="7Vx-ob-kuJ" secondAttribute="bottom" constant="10" id="1rI-Ss-pyN"/>
+                            <constraint firstItem="7Vx-ob-kuJ" firstAttribute="leading" secondItem="9Z1-5X-F2e" secondAttribute="leading" constant="10" id="Ji5-ss-qyB"/>
+                            <constraint firstAttribute="trailing" secondItem="7Vx-ob-kuJ" secondAttribute="trailing" constant="10" id="Xn8-2N-K62"/>
+                            <constraint firstItem="7Vx-ob-kuJ" firstAttribute="top" secondItem="9Z1-5X-F2e" secondAttribute="top" constant="10" id="g2r-Rc-Ht8"/>
+                        </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ivr-G1-KD2" userLabel="bottomView">
-                        <rect key="frame" x="0.0" y="219.5" width="320" height="30"/>
+                        <rect key="frame" x="0.0" y="469.5" width="320" height="30"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cell-content-line" translatesAutoresizingMaskIntoConstraints="NO" id="j7D-Gc-4GY">
                                 <rect key="frame" x="0.0" y="-0.5" width="320" height="1"/>
@@ -181,6 +195,7 @@
                 <outlet property="commentBtn" destination="qma-73-C97" id="PSj-yX-8LX"/>
                 <outlet property="contentPlaceHolderView" destination="9Z1-5X-F2e" id="l0t-r0-YFJ"/>
                 <outlet property="headImageView" destination="maz-e3-Gtd" id="PXr-9e-dRQ"/>
+                <outlet property="infoTextLabel" destination="7Vx-ob-kuJ" id="wua-0L-VzV"/>
                 <outlet property="moreDetailBtn" destination="bVk-i6-0Rh" id="P9G-gv-S1c"/>
                 <outlet property="nameLabel" destination="fqv-XH-WCr" id="Q7w-RK-Ynf"/>
                 <outlet property="shareBtn" destination="h1Z-H9-9Mt" id="fgf-Jd-dVk"/>

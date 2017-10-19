@@ -24,7 +24,7 @@
 /*
  @property(strong,nonatomic) NSString *profile_image; //头像地址
  @property(strong,nonatomic) NSString *screen_name; //发帖人昵称
- @property(strong,nonatomic) NSString *text; //title
+ @property(strong,nonatomic) NSString *text; //帖子title
  
  @property(strong,nonatomic) NSString *passtime; //帖子通过的时间
  
@@ -37,20 +37,26 @@
 - (void)setCellItems:(BSEssenceAllModel *)cellItems {
     _cellItems = cellItems;
     self.nameLabel.text = cellItems.screen_name;
+    self.infoTextLabel.text = cellItems.text;
     [self.headImageView sd_setImageWithURL:[NSURL URLWithString:cellItems.profile_image] placeholderImage:[UIImage imageNotRenderingWithName:@"defaultUserIcon"]];
     [self.zanBtn setTitle:cellItems.love forState:UIControlStateNormal];
     [self.caiBtn setTitle:cellItems.hate forState:UIControlStateNormal];
     [self.shareBtn setTitle:cellItems.repost forState:UIControlStateNormal];
     [self.commentBtn setTitle:cellItems.comment forState:UIControlStateNormal];
-    
     [self.updateTimeLabel setText:cellItems.passtime];
 }
 - (void)awakeFromNib {
     [super awakeFromNib];
+    // 背景图片拉伸布局
     UIImage *cellBGImage = [UIImage imageNotRenderingWithName:@"mainCellBackground"];
-    
     cellBGImage  = [cellBGImage stretchableImageWithLeftCapWidth:cellBGImage.width/2 topCapHeight:cellBGImage.height/2];
     self.backgroundView = [[UIImageView alloc] initWithImage:cellBGImage];
+}
+
+- (void)setFrame:(CGRect)frame {
+    // cell之间的高度减去10
+    frame.size.height -= 10;
+    [super setFrame:frame];
 }
 
 @end
