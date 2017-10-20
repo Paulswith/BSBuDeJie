@@ -22,7 +22,7 @@
 #import "BSSystemInfoTool.h"
 #import "BSFrequency.h"
 #import "BSSaveToolsBox.h"
-
+#import "NSString+BSString_height.h"
 
 #endif
 //-------------------头文件^end-------------------

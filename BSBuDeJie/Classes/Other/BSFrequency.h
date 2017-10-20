@@ -22,5 +22,6 @@ UIKIT_EXTERN NSString * const BSEssenceMaxTime;
 
 UIKIT_EXTERN NSString * const BSMainRUL;
 
-
+UIKIT_EXTERN NSUInteger const bestCommontViewHeight;
+UIKIT_EXTERN NSUInteger const allCellSpace;
 @end

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="500"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="500"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="499.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d81-Ti-FeR">
@@ -65,10 +65,6 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Z1-5X-F2e">
                         <rect key="frame" x="0.0" y="40" width="320" height="429.5"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OkI-55-WiZ">
-                                <rect key="frame" x="10" y="40.5" width="300" height="364.5"/>
-                                <color key="backgroundColor" red="1" green="0.92921254009999998" blue="0.37863758250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="聊点啥子哟" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Vx-ob-kuJ">
                                 <rect key="frame" x="10" y="10" width="300" height="20.5"/>
                                 <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -76,16 +72,40 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="03b-Mb-zO8">
+                                <rect key="frame" x="10" y="374.5" width="300" height="45"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最佳评论者" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LTm-mD-hlR">
+                                        <rect key="frame" x="0.0" y="0.0" width="82" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最佳评论的内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vvV-ld-4x8">
+                                        <rect key="frame" x="0.0" y="27" width="566.5" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="LTm-mD-hlR" firstAttribute="top" secondItem="03b-Mb-zO8" secondAttribute="top" id="7KK-gZ-XoO"/>
+                                    <constraint firstAttribute="bottom" secondItem="vvV-ld-4x8" secondAttribute="bottom" id="SGn-tD-HxE"/>
+                                    <constraint firstItem="vvV-ld-4x8" firstAttribute="leading" secondItem="03b-Mb-zO8" secondAttribute="leading" id="jk5-IQ-dGu"/>
+                                    <constraint firstAttribute="height" constant="45" id="qNX-vR-1IZ"/>
+                                    <constraint firstItem="LTm-mD-hlR" firstAttribute="leading" secondItem="03b-Mb-zO8" secondAttribute="leading" id="uZ2-cx-uzo"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="0.33403939260563381" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="7Vx-ob-kuJ" firstAttribute="leading" secondItem="9Z1-5X-F2e" secondAttribute="leading" constant="10" id="ApQ-H6-8XP"/>
-                            <constraint firstItem="OkI-55-WiZ" firstAttribute="top" secondItem="7Vx-ob-kuJ" secondAttribute="bottom" constant="10" id="Dh0-JQ-mrs"/>
-                            <constraint firstAttribute="trailing" secondItem="OkI-55-WiZ" secondAttribute="trailing" constant="10" id="Sck-VC-rXi"/>
-                            <constraint firstAttribute="bottom" secondItem="OkI-55-WiZ" secondAttribute="bottom" constant="24.5" id="Tjk-iv-HGK"/>
-                            <constraint firstAttribute="trailing" secondItem="7Vx-ob-kuJ" secondAttribute="trailing" constant="10" id="WyS-aA-zVv"/>
-                            <constraint firstItem="OkI-55-WiZ" firstAttribute="leading" secondItem="9Z1-5X-F2e" secondAttribute="leading" constant="10" id="Z4B-pV-7LX"/>
-                            <constraint firstItem="7Vx-ob-kuJ" firstAttribute="top" secondItem="9Z1-5X-F2e" secondAttribute="top" constant="10" id="gPd-in-CsT"/>
+                            <constraint firstItem="03b-Mb-zO8" firstAttribute="leading" secondItem="9Z1-5X-F2e" secondAttribute="leading" constant="10" id="8mW-qZ-52B"/>
+                            <constraint firstItem="7Vx-ob-kuJ" firstAttribute="leading" secondItem="9Z1-5X-F2e" secondAttribute="leading" constant="10" id="96y-03-CLn"/>
+                            <constraint firstAttribute="trailing" secondItem="7Vx-ob-kuJ" secondAttribute="trailing" constant="10" id="AIc-RD-a2U"/>
+                            <constraint firstItem="7Vx-ob-kuJ" firstAttribute="top" secondItem="9Z1-5X-F2e" secondAttribute="top" constant="10" id="bxC-fR-8vS"/>
+                            <constraint firstAttribute="bottom" secondItem="03b-Mb-zO8" secondAttribute="bottom" constant="10" id="pWB-YU-eAd"/>
+                            <constraint firstAttribute="trailing" secondItem="03b-Mb-zO8" secondAttribute="trailing" constant="10" id="qMf-ZV-GV3"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ivr-G1-KD2" userLabel="bottomView">
@@ -200,9 +220,12 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="bestCommentUserLabel" destination="LTm-mD-hlR" id="VlX-5g-eq7"/>
+                <outlet property="bestCommentView" destination="03b-Mb-zO8" id="bqP-TB-bUF"/>
+                <outlet property="bestCommontContentLabel" destination="vvV-ld-4x8" id="VFZ-wQ-9Ns"/>
                 <outlet property="caiBtn" destination="Q5L-hG-f4X" id="YBe-HI-w1K"/>
                 <outlet property="commentBtn" destination="qma-73-C97" id="PSj-yX-8LX"/>
-                <outlet property="contentPlaceHolderView" destination="OkI-55-WiZ" id="dA7-Lq-LjS"/>
+                <outlet property="contentPlaceHolderView" destination="9Z1-5X-F2e" id="BkA-fX-GW7"/>
                 <outlet property="headImageView" destination="maz-e3-Gtd" id="PXr-9e-dRQ"/>
                 <outlet property="infoTextLabel" destination="7Vx-ob-kuJ" id="W4T-Qd-pnu"/>
                 <outlet property="moreDetailBtn" destination="bVk-i6-0Rh" id="P9G-gv-S1c"/>

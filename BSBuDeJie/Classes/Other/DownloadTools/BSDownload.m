@@ -7,6 +7,7 @@
 //
 
 #import "BSDownload.h"
+#import "BSEssenceAllModel.h"
 
 @implementation BsdownloadKeyword
 
@@ -52,17 +53,17 @@ NSString * const Essence_joke_more = @"joke_essence_more";
 + (NSNumber *)typeWithString:(NSString *)key {
     // 1为全部，10为图片，29为段子，31为音频，41为视频，默认为1
     if ([key hasPrefix:@"all"]) {
-        return @1;
+        return @(BSEssenceTypeAll);
     }else if ([key hasPrefix:@"photo"]) {
-        return @10;
+        return @(BSEssenceTypePhoto);
     }else if ([key hasPrefix:@"joke"]) {
-        return @29;
+        return @(BSEssenceTypeJoke);
     }else if ([key hasPrefix:@"sound"]) {
-        return @31;
+        return @(BSEssenceTypeSound);
     }else if ([key hasPrefix:@"video"]) {
-        return @41;
+        return @(BSEssenceTypeVideo);
     }else {
-        return @1;
+        return @(BSEssenceTypeDefault);
     }
 }
 @end
