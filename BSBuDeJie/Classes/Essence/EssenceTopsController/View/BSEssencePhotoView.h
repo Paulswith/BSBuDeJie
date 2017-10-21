@@ -7,10 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+@class BSEssenceAllModel;
 
 @interface BSEssencePhotoView : UIView
-
-@property (weak, nonatomic) IBOutlet UIImageView *gifIcon;
-@property (weak, nonatomic) IBOutlet UIView *mainView;
+@property (strong, nonatomic) BSEssenceAllModel *photoItems;
 + (instancetype)photoViewFromXib;
 @end

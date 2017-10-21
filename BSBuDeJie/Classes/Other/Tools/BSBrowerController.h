@@ -12,4 +12,7 @@
 
 @property (strong, nonatomic) NSURL *url;
 
+
+
+// 实例后, 赋值 url后, 直接push即可
 @end

@@ -10,7 +10,6 @@
 #import "BSRefreshView.h"
 #import <AFNetworking/AFNetworking.h>
 #import <MJExtension/MJExtension.h>
-//#import "BSEssencePhotoModel.h"
 #import "BSEssenceAllModel.h"
 #import "BSEssenceAllClell.h"
 #import "BSDownload.h"

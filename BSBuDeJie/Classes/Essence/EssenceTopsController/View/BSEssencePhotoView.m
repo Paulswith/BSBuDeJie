@@ -7,40 +7,52 @@
 //
 
 #import "BSEssencePhotoView.h"
-#import "BSGifImageView.h"
-#import "BSGIFImage.h"
+#import "BSEssenceAllModel.h"
 #import <SDWebImage/UIImageView+WebCache.h>
-#import <SDWebImage/UIImage+GIF.h>
-
+#import "FLAnimatedImageView.h"
+#import "BSBrowerController.h"
 
 @interface BSEssencePhotoView()
 
+@property (weak, nonatomic) IBOutlet UIImageView *gifIcon;
+@property (weak, nonatomic) IBOutlet FLAnimatedImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIButton *seeLargerPicBtn;
+
 @end
 @implementation BSEssencePhotoView
-/*
-+ (instancetype)photoViewWithPhotoType:(NSString *)photoType photoURL:(NSString *)photoURL {
-    BSEssencePhotoView *view = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([BSEssencePhotoView class]) owner:nil options:nil] firstObject];
-    if (photoType.boolValue == YES) {
-        BSGifImageView *gifImageView =  [[BSGifImageView alloc] initWithFrame:CGRectMake(0, 0, screenW - 20, 300)];
-//        gifImageView.backgroundColor = [UIColor grayColor];
-//        [gifImageView sd_setAnimationImagesWithURLs:@[[NSURL URLWithString:photoURL]]];
-        gifImageView.image = [UIImage imageNamed:@"all.gif"];
-        [view.mainView addSubview:gifImageView];
-    }else {
-        [view shouldShowGifIcon:NO];
-        UIImageView *normalImageView =  [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, screenW - 20, 300)];
-        normalImageView.backgroundColor = [UIColor orangeColor];
-//        [normalImageView sd_setImageWithURL:[NSURL URLWithString:photoURL]];
-        [view.mainView addSubview:normalImageView];
-    }
-    return view;
-    /*
-     1 内存飙升, imageView没有循环, 因为不属于里面的View
-     
 
-*/
 + (instancetype)photoViewFromXib {
     return [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:nil options:nil].firstObject;
+}
+- (void)setPhotoItems:(BSEssenceAllModel *)photoItems {
+    _photoItems = photoItems;
+    if (photoItems.is_gif==0) {
+        [self.gifIcon removeFromSuperview];
+    }
+    NSURL *ImageURL = [NSURL URLWithString:photoItems.cdn_img];
+    if (photoItems.is_gif == YES) {
+        // gif直接给图就可以, 这个框架很牛瓣,感谢FL
+        [self.imageView sd_setImageWithURL:ImageURL];
+    }else {
+        [self.imageView sd_setImageWithURL:ImageURL completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+            if (photoItems.larger_pic) {
+                //如果是大图就进行裁剪下,根据frame的矩形,没错,就是要高度而已~ 这里是主线程!
+                CGFloat clipHeight = photoItems.contentViewFrame.size.height;
+                UIGraphicsBeginImageContextWithOptions(CGSizeMake(image.size.width, clipHeight), NO, 0);
+                UIBezierPath *path = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, image.size.width, clipHeight)];
+                [path addClip];
+                [image drawAtPoint:CGPointZero];
+                image = UIGraphicsGetImageFromCurrentImageContext();
+                UIGraphicsEndImageContext();
+            }
+            self.imageView.image = image;
+        }];
+    }
+}
+- (IBAction)seeLargerPicTouch:(UIButton *)sender {
+    NSURL *url = [NSURL URLWithString:_photoItems.cdn_img];
+    [[UIApplication sharedApplication] openURL:url options:nil completionHandler:nil];
+    //还没开发详情页,将就
 }
 
 

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,10 +15,9 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vbw-NZ-eN1">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7r2-ZH-tBM" customClass="FLAnimatedImageView">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
+                </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="common-gif" translatesAutoresizingMaskIntoConstraints="NO" id="Oty-ih-bWG">
                     <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                     <constraints>
@@ -26,26 +25,49 @@
                         <constraint firstAttribute="height" constant="30" id="jeW-SI-Bbq"/>
                     </constraints>
                 </imageView>
+                <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="see-big-picture-background" translatesAutoresizingMaskIntoConstraints="NO" id="9NW-Fj-tcS">
+                    <rect key="frame" x="0.0" y="260" width="375" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="pRf-N2-iKZ"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RvU-f8-Xn2" userLabel="点击查看大图">
+                    <rect key="frame" x="115.5" y="260" width="144" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="gWt-LS-YTW"/>
+                    </constraints>
+                    <state key="normal" title="   点击查看大图" image="see-big-picture"/>
+                    <connections>
+                        <action selector="seeLargerPicTouch:" destination="iN0-l3-epB" eventType="touchUpInside" id="aKF-b5-lqH"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Vbw-NZ-eN1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="3U0-2C-Elx"/>
-                <constraint firstAttribute="trailing" secondItem="Vbw-NZ-eN1" secondAttribute="trailing" id="RkC-Yg-Duc"/>
+                <constraint firstItem="7r2-ZH-tBM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="36c-Qf-9f3"/>
+                <constraint firstAttribute="bottom" secondItem="RvU-f8-Xn2" secondAttribute="bottom" id="BJ2-SD-TIf"/>
+                <constraint firstAttribute="trailing" secondItem="9NW-Fj-tcS" secondAttribute="trailing" id="LK2-CE-mCt"/>
+                <constraint firstAttribute="trailing" secondItem="7r2-ZH-tBM" secondAttribute="trailing" id="RVq-CY-j9I"/>
+                <constraint firstItem="9NW-Fj-tcS" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="SEP-1d-G6P"/>
                 <constraint firstItem="Oty-ih-bWG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="aLt-z7-xok"/>
-                <constraint firstItem="Vbw-NZ-eN1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="amt-tz-PKo"/>
-                <constraint firstAttribute="bottom" secondItem="Vbw-NZ-eN1" secondAttribute="bottom" id="dra-e6-FNr"/>
+                <constraint firstItem="RvU-f8-Xn2" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="cbi-Id-2sC"/>
                 <constraint firstItem="Oty-ih-bWG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="oeR-9E-say"/>
+                <constraint firstAttribute="bottom" secondItem="9NW-Fj-tcS" secondAttribute="bottom" id="t9g-sm-W7N"/>
+                <constraint firstItem="7r2-ZH-tBM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="zAY-Oj-nmz"/>
+                <constraint firstAttribute="bottom" secondItem="7r2-ZH-tBM" secondAttribute="bottom" id="zc9-dT-Bjp"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="gifIcon" destination="Oty-ih-bWG" id="hPo-w9-A1t"/>
-                <outlet property="mainView" destination="Vbw-NZ-eN1" id="gFM-qt-0tB"/>
+                <outlet property="imageView" destination="7r2-ZH-tBM" id="3A2-yM-qR7"/>
             </connections>
             <point key="canvasLocation" x="35.5" y="-328"/>
         </view>
     </objects>
     <resources>
         <image name="common-gif" width="31" height="31"/>
+        <image name="see-big-picture" width="19" height="19"/>
+        <image name="see-big-picture-background" width="285" height="43"/>
     </resources>
 </document>

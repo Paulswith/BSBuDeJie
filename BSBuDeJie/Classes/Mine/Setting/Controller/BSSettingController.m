@@ -30,10 +30,6 @@ static NSString * const cellIdentifier = @"setting";
 }
 
 #pragma mark - Table view data source
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//    return 1;
-//}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 1;
 }
@@ -71,7 +67,7 @@ static NSString * const cellIdentifier = @"setting";
          _totalSize = 0 ;
         [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
     }];
-    
+//    [[NSNotificationCenter defaultCenter] postNotificationName:BSSettingsCleanCacheNoti object:nil];
     
 }
 

@@ -18,6 +18,7 @@
 #define newKey Essence_all_new
 #define moreKey Essence_all_more
 static NSString * const ID = @"cellALL";
+
 @interface BSAllTableView ()
 @property(strong,nonatomic) NSMutableArray<__kindof BSEssenceAllModel *> *allModelArray;
 @end
@@ -25,10 +26,11 @@ static NSString * const ID = @"cellALL";
 @implementation BSAllTableView
 -(void)viewDidLoad {
     [super viewDidLoad];
+    [self loadDataWithKey:newKey];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cleanModelArray) name:BSSettingsCleanCacheNoti object:nil];
+    
     UINib *registerNIb = [UINib nibWithNibName:NSStringFromClass([BSEssenceBaseCell class]) bundle:[NSBundle mainBundle]];
     [self.tableView registerNib:registerNIb forCellReuseIdentifier:ID];
-    [self loadDataWithKey:newKey];
-//    self.tableView.rowHeight = 250;
 }
 #pragma mark - loadData 
 - (void)loadDataWithKey:(NSString *)key {
@@ -43,9 +45,11 @@ static NSString * const ID = @"cellALL";
         BSLog(@"success -- url=%@",task.response.URL);
         [BSSaveToolsBox setObject:responseObject[@"info"][@"maxtime"] forKey:BSEssenceMaxTime autoSynchronize:YES];
         tempArray = [BSEssenceAllModel mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
+        [responseObject writeToFile:@"/Users/mac/Desktop/Vie/all.plist" atomically:YES];
+
         //下拉刷新的时候清空再拉取
         if (isGetRefresh) {
-            self.allModelArray=nil;
+            [self cleanModelArray];
             for (BSEssenceAllModel *model in tempArray) {
                 [self.allModelArray addObject:model];
             }
@@ -73,7 +77,7 @@ static NSString * const ID = @"cellALL";
     return cell;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return _allModelArray[indexPath.row].text_height;  
+    return _allModelArray[indexPath.row].row_height;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [super tableView:tableView didSelectRowAtIndexPath:indexPath];
@@ -102,4 +106,13 @@ static NSString * const ID = @"cellALL";
     }
     return _allModelArray;
 }
+- (void)cleanModelArray {
+    [self.allModelArray removeAllObjects];
+    self.allModelArray = nil;
+}
+#warning Mark一个bug, 清除缓存再双击tab,则gif不播放了,类似是按了暂停,或者载入的缓存图以清除,但gifImage不知道
+//-(void)dealloc {
+//    [[NSNotificationCenter defaultCenter] removeObserver:self];
+//}
+
 @end

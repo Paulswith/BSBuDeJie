@@ -10,10 +10,8 @@
 #import "BSRefreshView.h"
 #import <AFNetworking/AFNetworking.h>
 #import <MJExtension/MJExtension.h>
-//#import "BSEssenceVideoModel.h"
 #import "BSEssenceAllModel.h"
 #import "BSEssenceAllClell.h"
-//#import "BSEssenceVideoCell.h"
 #import "BSDownload.h"
 
 #define newKey Essence_video_new
