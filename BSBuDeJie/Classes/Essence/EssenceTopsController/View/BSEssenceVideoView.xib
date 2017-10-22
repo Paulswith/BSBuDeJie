@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,17 +15,34 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="VIDEO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QbR-EM-IRz">
-                    <rect key="frame" x="160" y="158" width="50" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FQS-9R-djo">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play_btn" translatesAutoresizingMaskIntoConstraints="NO" id="mCp-to-6bj">
+                    <rect key="frame" x="157" y="157" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="FNl-Wb-RDP"/>
+                        <constraint firstAttribute="height" constant="60" id="aW8-Dn-LZY"/>
+                    </constraints>
+                </imageView>
             </subviews>
-            <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="FQS-9R-djo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="21b-n4-chM"/>
+                <constraint firstAttribute="bottom" secondItem="FQS-9R-djo" secondAttribute="bottom" id="CuL-zR-Hi4"/>
+                <constraint firstItem="mCp-to-6bj" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="aqo-Ci-7PF"/>
+                <constraint firstItem="mCp-to-6bj" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="fvM-pB-dM9"/>
+                <constraint firstAttribute="trailing" secondItem="FQS-9R-djo" secondAttribute="trailing" id="jDe-xB-EvU"/>
+                <constraint firstItem="FQS-9R-djo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="jQF-aR-6SO"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="playBtn" destination="mCp-to-6bj" id="7sW-FB-65D"/>
+                <outlet property="videoCover" destination="FQS-9R-djo" id="o2j-KP-Qz3"/>
+            </connections>
         </view>
     </objects>
+    <resources>
+        <image name="play_btn" width="60" height="60"/>
+    </resources>
 </document>

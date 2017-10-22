@@ -2,7 +2,7 @@
 //  BSEssenceAllModel.m
 //  BSBuDeJie
 //
-//  Created by v_ljiayili(李嘉艺) on 2017/10/18.
+//  Created by Dobby on 2017/10/18.
 //  Copyright © 2017年 Dobby. All rights reserved.
 //
 
@@ -47,13 +47,13 @@
         frameHeight = _contentViewFrame.size.height + 10 ; //补10到bottomView间距
     }
     _row_height += frameHeight; //加上计算后的高度和间距
-    NSLog(@"当前类型为[%ld],(w=%ld,h=%ld)计算内容View得[%f], 最终得到->[%f]",_type,_width,_height,frameHeight,_row_height);
+//    NSLog(@"当前类型为[%ld],(w=%ld,h=%ld)计算内容View得[%f], 最终得到->[%f]",_type,_width,_height,frameHeight,_row_height);
     _row_height += (30 + 10 + 10); //底部bottomHeight:30 +cell之间的10 + 不知道哪来的10~~
     return _row_height;
 }
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"下发(w=%ld,h=%ld),frame=%@->tyle=%ld",_width,_height,NSStringFromCGRect(_contentViewFrame),_type];
+    return [NSString stringWithFormat:@"tyle=%ld,frame=%@->cnd_image=%@,video_url=%@",_type,NSStringFromCGRect(_contentViewFrame),_cdn_img,_videouri];
 }
 
 @end

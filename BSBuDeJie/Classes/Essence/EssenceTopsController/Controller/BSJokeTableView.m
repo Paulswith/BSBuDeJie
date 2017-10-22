@@ -2,7 +2,7 @@
 //  BSJokeTableView.m
 //  BSBuDeJie
 //
-//  Created by v_ljiayili(李嘉艺) on 2017/10/14.
+//  Created by Dobby on 2017/10/14.
 //  Copyright © 2017年 Dobby. All rights reserved.
 //
 
@@ -14,6 +14,7 @@
 #import "BSEssenceAllModel.h"
 #import "BSEssenceAllClell.h"
 #import "BSDownload.h"
+#import "BSEssenceBaseCell.h"
 
 #define newKey Essence_joke_new
 #define moreKey Essence_joke_more
@@ -25,7 +26,8 @@ static NSString * const ID = @"cellJoke";
 @implementation BSJokeTableView
 -(void)viewDidLoad {
     [super viewDidLoad];
-    [self.tableView registerClass:[BSEssenceAllClell class] forCellReuseIdentifier:ID];
+    UINib *registerNIb = [UINib nibWithNibName:NSStringFromClass([BSEssenceBaseCell class]) bundle:[NSBundle mainBundle]];
+    [self.tableView registerNib:registerNIb forCellReuseIdentifier:ID];
     [self loadDataWithKey:newKey];
 }
 
@@ -34,11 +36,15 @@ static NSString * const ID = @"cellJoke";
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return _allModelArray.count;
 }
-- (BSEssenceAllClell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    BSEssenceAllClell *cell = [tableView dequeueReusableCellWithIdentifier:ID forIndexPath:indexPath];
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    BSEssenceBaseCell *cell = [tableView dequeueReusableCellWithIdentifier:ID forIndexPath:indexPath];
     BSEssenceAllModel *model = _allModelArray[indexPath.row];
-    cell.allModelCell = model;
+    cell.cellItems = model;
     return cell;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    BSEssenceAllModel *model = _allModelArray[indexPath.row];
+    return model.row_height;
 }
 
 #pragma mark - 父类实现的方法
@@ -68,9 +74,10 @@ static NSString * const ID = @"cellJoke";
         BSLog(@"success -- url=%@",task.response.URL);
         [BSSaveToolsBox setObject:responseObject[@"info"][@"maxtime"] forKey:BSEssenceMaxTime autoSynchronize:YES];
         tempArray = [BSEssenceAllModel mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
+        
         //下拉刷新的时候清空再拉取
         if (isGetRefresh) {
-            self.allModelArray=nil;
+            [self cleanModelArray];
             for (BSEssenceAllModel *model in tempArray) {
                 [self.allModelArray addObject:model];
             }
@@ -84,6 +91,10 @@ static NSString * const ID = @"cellJoke";
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         BSLog(@"failure -- url=%@, Error=%@",task.response.URL,error);
     }];
+}
+- (void)cleanModelArray {
+    [self.allModelArray removeAllObjects];
+    self.allModelArray = nil;
 }
 
 - (NSMutableArray *)allModelArray {

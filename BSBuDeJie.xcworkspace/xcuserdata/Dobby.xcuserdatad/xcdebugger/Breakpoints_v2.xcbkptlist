@@ -20,12 +20,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BSBuDeJie/Classes/Essence/EssenceTopsController/Controller/BSAllTableView.m"
-            timestampString = "530292752.793088"
+            timestampString = "530401751.88666"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
-            landmarkName = "-cleanModelArray"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
+            landmarkName = "-showVideoPlayer:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -36,12 +36,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BSBuDeJie/Classes/Essence/EssenceTopsController/Controller/BSAllTableView.m"
-            timestampString = "530291808.655241"
+            timestampString = "530401751.88666"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
-            landmarkName = "-doubleReloadData"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
+            landmarkName = "-showVideoPlayer:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -2,7 +2,7 @@
 //  BSEssenceBaseCell.m
 //  BSBuDeJie
 //
-//  Created by v_ljiayili(李嘉艺) on 2017/10/19.
+//  Created by Dobby on 2017/10/19.
 //  Copyright © 2017年 Dobby. All rights reserved.
 //
 
@@ -35,9 +35,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *bestCommontContentLabel; //最佳评论的文本 单行
 
 //内容的view , 直接调
-@property(weak,nonatomic) BSEssenceSoundView *contentSoundView;
-@property(weak,nonatomic) BSEssencePhotoView *contentPhotoView;
-@property(weak,nonatomic) BSEssenceVideoView *contentVideoView;
+//@property(weak,nonatomic) BSEssenceSoundView *contentSoundView;
+//@property(weak,nonatomic) BSEssencePhotoView *contentPhotoView;
+//@property(weak,nonatomic) BSEssenceVideoView *contentVideoView;
 
 @end
 
@@ -71,6 +71,7 @@
         [self.contentSoundView removeFromSuperview];
         [self.contentVideoView removeFromSuperview];
     }else if (cellItems.type == BSEssenceTypeVideo) {
+        self.contentVideoView.videoModel = cellItems;
         [self.contentSoundView removeFromSuperview];
         [self.contentPhotoView removeFromSuperview];
     }else if (cellItems.type == BSEssenceTypeSound) {

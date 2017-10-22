@@ -2,7 +2,7 @@
 //  BSEssenceSoundView.m
 //  BSBuDeJie
 //
-//  Created by v_ljiayili(李嘉艺) on 2017/10/20.
+//  Created by Dobby on 2017/10/20.
 //  Copyright © 2017年 Dobby. All rights reserved.
 //
 
@@ -26,11 +26,5 @@
     return [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:nil options:nil].firstObject;
 }
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    
-    
-    
-    
-}
+
 @end

@@ -2,7 +2,7 @@
 //  BSEssenceAllModel.h
 //  BSBuDeJie
 //
-//  Created by v_ljiayili(李嘉艺) on 2017/10/18.
+//  Created by Dobby on 2017/10/18.
 //  Copyright © 2017年 Dobby. All rights reserved.
 //
 
@@ -34,12 +34,16 @@ typedef NS_OPTIONS(NSInteger, BSEssenceType)
 @property(assign,nonatomic) NSInteger height; //图片或视频等其他的内容的高度
 @property(assign,nonatomic) NSInteger width; //图片或视频等其他的内容的宽度
 @property(strong,nonatomic) NSString *cdn_img; // gif / png / 视频封面的图片Url
-@property(strong,nonatomic) NSString *image0; // gif / png / 视频封面的图片Url
+@property(strong,nonatomic) NSString *videouri; // 视频url
 @property(strong,nonatomic) NSArray *top_cmt; // 最佳评论
 
 // 非后台下发数据,自缓存部分
 @property(assign,nonatomic) CGFloat row_height; //自定义缓存高度
 @property(assign,nonatomic) CGRect contentViewFrame; //
 @property (assign, nonatomic) BOOL larger_pic; //是否为大图
+@property (strong, nonatomic) UITableView *bindTableView; //播放器需要绑定的
+@property (strong, nonatomic) NSIndexPath *bindIndexPath; //播放器需要绑定的
+
+//videouri
 
 @end

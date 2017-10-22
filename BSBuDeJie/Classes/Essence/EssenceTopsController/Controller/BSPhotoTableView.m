@@ -2,7 +2,7 @@
 //  BSPhotoTableView.m
 //  BSBuDeJie
 //
-//  Created by v_ljiayili(李嘉艺) on 2017/10/14.
+//  Created by Dobby on 2017/10/14.
 //  Copyright © 2017年 Dobby. All rights reserved.
 //
 
@@ -11,7 +11,8 @@
 #import <AFNetworking/AFNetworking.h>
 #import <MJExtension/MJExtension.h>
 #import "BSEssenceAllModel.h"
-#import "BSEssenceAllClell.h"
+//#import "BSEssenceAllClell.h"
+#import "BSEssenceBaseCell.h"
 #import "BSDownload.h"
 
 #define newKey Essence_photo_new
@@ -24,7 +25,8 @@ static NSString * const ID = @"cellVideo";
 @implementation BSPhotoTableView
 -(void)viewDidLoad {
     [super viewDidLoad];
-    [self.tableView registerClass:[BSEssenceAllClell class] forCellReuseIdentifier:ID];
+    UINib *registerNIb = [UINib nibWithNibName:NSStringFromClass([BSEssenceBaseCell class]) bundle:[NSBundle mainBundle]];
+    [self.tableView registerNib:registerNIb forCellReuseIdentifier:ID];
     [self loadDataWithKey:newKey];
 }
 
@@ -33,11 +35,15 @@ static NSString * const ID = @"cellVideo";
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return _allModelArray.count;
 }
-- (BSEssenceAllClell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    BSEssenceAllClell *cell = [tableView dequeueReusableCellWithIdentifier:ID forIndexPath:indexPath];
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    BSEssenceBaseCell *cell = [tableView dequeueReusableCellWithIdentifier:ID forIndexPath:indexPath];
     BSEssenceAllModel *model = _allModelArray[indexPath.row];
-    cell.allModelCell = model;
+    cell.cellItems = model;
     return cell;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    BSEssenceAllModel *model = _allModelArray[indexPath.row];
+    return model.row_height;
 }
 
 #pragma mark - loadData
@@ -55,7 +61,7 @@ static NSString * const ID = @"cellVideo";
         tempArray = [BSEssenceAllModel mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
         //下拉刷新的时候清空再拉取
         if (isGetRefresh) {
-            self.allModelArray=nil;
+            [self cleanModelArray];
             for (BSEssenceAllModel *model in tempArray) {
                 [self.allModelArray addObject:model];
             }
@@ -84,7 +90,10 @@ static NSString * const ID = @"cellVideo";
     [self loadDataWithKey:moreKey];
     [super loadMoreData];
 }
-
+- (void)cleanModelArray {
+    [self.allModelArray removeAllObjects];
+    self.allModelArray = nil;
+}
 #pragma mark - 懒加载部分
 - (NSMutableArray *)allModelArray {
     if (!_allModelArray) {

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		8F51742FC15A359E705B29B2 /* libPods-BSBuDeJie.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A76DF346B2755F9BA7A6757 /* libPods-BSBuDeJie.a */; };
 		920BA8A61F8B288900D05C77 /* BSSystemInfoTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 920BA8A51F8B288900D05C77 /* BSSystemInfoTool.m */; };
-		921F83D01F9145D100305AA7 /* BSAllTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 921F83CF1F9145D100305AA7 /* BSAllTableView.m */; };
 		921F83D61F9145FC00305AA7 /* BSVideoTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 921F83D51F9145FC00305AA7 /* BSVideoTableView.m */; };
 		921F83D91F91460700305AA7 /* BSPhotoTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 921F83D81F91460700305AA7 /* BSPhotoTableView.m */; };
 		921F83DC1F91461000305AA7 /* BSJokeTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 921F83DB1F91461000305AA7 /* BSJokeTableView.m */; };
@@ -59,6 +58,9 @@
 		C78809041F825CD6002F2D90 /* BSFollowItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C78809031F825CD6002F2D90 /* BSFollowItem.m */; };
 		C78809081F825FDB002F2D90 /* BSTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C78809061F825FDB002F2D90 /* BSTableViewCell.m */; };
 		C78809091F825FDB002F2D90 /* BSTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C78809071F825FDB002F2D90 /* BSTableViewCell.xib */; };
+		C78A294D1F9BBE760051315B /* ImageResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C78A29471F9BBE760051315B /* ImageResources.bundle */; };
+		C78A294E1F9BBE760051315B /* XLSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = C78A294A1F9BBE760051315B /* XLSlider.m */; };
+		C78A294F1F9BBE760051315B /* XLVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C78A294C1F9BBE760051315B /* XLVideoPlayer.m */; };
 		C7BA09E21F9674ED0011518E /* BSEssenceView.m in Sources */ = {isa = PBXBuildFile; fileRef = C7BA09E11F9674ED0011518E /* BSEssenceView.m */; };
 		C7D9563B1F8A380100A26021 /* BSMineViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7D9563A1F8A380100A26021 /* BSMineViewController.storyboard */; };
 		C7D9563F1F8A41AA00A26021 /* BSCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7D9563D1F8A41AA00A26021 /* BSCollectionViewCell.m */; };
@@ -91,7 +93,6 @@
 		920BA8A41F8B288900D05C77 /* BSSystemInfoTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSSystemInfoTool.h; sourceTree = "<group>"; };
 		920BA8A51F8B288900D05C77 /* BSSystemInfoTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSSystemInfoTool.m; sourceTree = "<group>"; };
 		921F83CE1F9145D100305AA7 /* BSAllTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSAllTableView.h; sourceTree = "<group>"; };
-		921F83CF1F9145D100305AA7 /* BSAllTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSAllTableView.m; sourceTree = "<group>"; };
 		921F83D41F9145FC00305AA7 /* BSVideoTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSVideoTableView.h; sourceTree = "<group>"; };
 		921F83D51F9145FC00305AA7 /* BSVideoTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSVideoTableView.m; sourceTree = "<group>"; };
 		921F83D71F91460700305AA7 /* BSPhotoTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSPhotoTableView.h; sourceTree = "<group>"; };
@@ -180,6 +181,11 @@
 		C78809051F825FDB002F2D90 /* BSTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSTableViewCell.h; sourceTree = "<group>"; };
 		C78809061F825FDB002F2D90 /* BSTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTableViewCell.m; sourceTree = "<group>"; };
 		C78809071F825FDB002F2D90 /* BSTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSTableViewCell.xib; sourceTree = "<group>"; };
+		C78A29471F9BBE760051315B /* ImageResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ImageResources.bundle; sourceTree = "<group>"; };
+		C78A29491F9BBE760051315B /* XLSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLSlider.h; sourceTree = "<group>"; };
+		C78A294A1F9BBE760051315B /* XLSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLSlider.m; sourceTree = "<group>"; };
+		C78A294B1F9BBE760051315B /* XLVideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLVideoPlayer.h; sourceTree = "<group>"; };
+		C78A294C1F9BBE760051315B /* XLVideoPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLVideoPlayer.m; sourceTree = "<group>"; };
 		C7BA09E01F9674ED0011518E /* BSEssenceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSEssenceView.h; sourceTree = "<group>"; };
 		C7BA09E11F9674ED0011518E /* BSEssenceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSEssenceView.m; sourceTree = "<group>"; };
 		C7D9563A1F8A380100A26021 /* BSMineViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BSMineViewController.storyboard; sourceTree = "<group>"; };
@@ -265,7 +271,6 @@
 				C7547A2D1F93628500C45E68 /* BSEssenceBisicTableViewController.h */,
 				C7547A2E1F93628500C45E68 /* BSEssenceBisicTableViewController.m */,
 				921F83CE1F9145D100305AA7 /* BSAllTableView.h */,
-				921F83CF1F9145D100305AA7 /* BSAllTableView.m */,
 				921F83D41F9145FC00305AA7 /* BSVideoTableView.h */,
 				921F83D51F9145FC00305AA7 /* BSVideoTableView.m */,
 				921F83D71F91460700305AA7 /* BSPhotoTableView.h */,
@@ -568,6 +573,7 @@
 		92839B591F98A22C00611FCC /* componet */ = {
 			isa = PBXGroup;
 			children = (
+				C78A29461F9BBE760051315B /* VideoPlayer */,
 				92B4D8981F999AAB00B589D3 /* ImageViewForGif */,
 				92F9E4201F96043800CDE92A /* BSRefreshView.h */,
 				92F9E4211F96043800CDE92A /* BSRefreshView.m */,
@@ -683,6 +689,26 @@
 				C78809071F825FDB002F2D90 /* BSTableViewCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		C78A29461F9BBE760051315B /* VideoPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				C78A29471F9BBE760051315B /* ImageResources.bundle */,
+				C78A29481F9BBE760051315B /* Slider */,
+				C78A294B1F9BBE760051315B /* XLVideoPlayer.h */,
+				C78A294C1F9BBE760051315B /* XLVideoPlayer.m */,
+			);
+			path = VideoPlayer;
+			sourceTree = "<group>";
+		};
+		C78A29481F9BBE760051315B /* Slider */ = {
+			isa = PBXGroup;
+			children = (
+				C78A29491F9BBE760051315B /* XLSlider.h */,
+				C78A294A1F9BBE760051315B /* XLSlider.m */,
+			);
+			path = Slider;
 			sourceTree = "<group>";
 		};
 		C7E484EC1F80E73A001A3E45 /* Mine */ = {
@@ -919,6 +945,7 @@
 				92C5B1971F9A1D9700C05A44 /* BSEssenceSoundView.xib in Resources */,
 				92C5B1921F9A1D6900C05A44 /* BSEssenceVideoView.xib in Resources */,
 				C7141A7F1F81EA1D00883E2A /* BSADViewController.xib in Resources */,
+				C78A294D1F9BBE760051315B /* ImageResources.bundle in Resources */,
 				C7F9514E1F83607D0002CC7C /* BSQuickLogin.xib in Resources */,
 				C78809091F825FDB002F2D90 /* BSTableViewCell.xib in Resources */,
 				923865E41F7B4BA700ABD2DF /* LaunchScreen.storyboard in Resources */,
@@ -994,7 +1021,6 @@
 				C7BA09E21F9674ED0011518E /* BSEssenceView.m in Sources */,
 				C7E485111F811C50001A3E45 /* BSADViewController.m in Sources */,
 				924057631F975159009900EC /* BSDownload.m in Sources */,
-				921F83D01F9145D100305AA7 /* BSAllTableView.m in Sources */,
 				9238660D1F7B987E00ABD2DF /* BSFriendTrendViewController.m in Sources */,
 				9240575F1F9750E7009900EC /* BSStartViewController.m in Sources */,
 				C7D9563F1F8A41AA00A26021 /* BSCollectionViewCell.m in Sources */,
@@ -1029,8 +1055,10 @@
 				92CB53801F7E3FB60074709F /* UIImage+Catogory.m in Sources */,
 				C78809041F825CD6002F2D90 /* BSFollowItem.m in Sources */,
 				921F83D91F91460700305AA7 /* BSPhotoTableView.m in Sources */,
+				C78A294F1F9BBE760051315B /* XLVideoPlayer.m in Sources */,
 				C7F951541F8367530002CC7C /* BSHeadBottomBtn.m in Sources */,
 				923866101F7B98A600ABD2DF /* BSNewPostViewController.m in Sources */,
+				C78A294E1F9BBE760051315B /* XLSlider.m in Sources */,
 				C7E484F21F80E75F001A3E45 /* BSMineViewController.m in Sources */,
 				92CB53811F7E3FB60074709F /* UIView+Frame.m in Sources */,
 				C7D956481F8A7EFC00A26021 /* BSBrowerController.m in Sources */,

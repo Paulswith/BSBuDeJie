@@ -2,7 +2,7 @@
 //  BSVideoTableView.m
 //  BSBuDeJie
 //
-//  Created by v_ljiayili(李嘉艺) on 2017/10/14.
+//  Created by Dobby on 2017/10/14.
 //  Copyright © 2017年 Dobby. All rights reserved.
 //
 
@@ -13,19 +13,30 @@
 #import "BSEssenceAllModel.h"
 #import "BSEssenceAllClell.h"
 #import "BSDownload.h"
+#import "BSEssenceBaseCell.h"
+#import "XLVideoPlayer.h"
+#import "BSEssenceVideoView.h"
 
 #define newKey Essence_video_new
 #define moreKey Essence_video_more
 
 static NSString * const ID = @"cellVideo";
 @interface BSVideoTableView ()
+{
+    NSIndexPath *_indexPath;
+    XLVideoPlayer *_player;
+    CGRect _currentPlayCellRect;
+}
+
 @property(strong,nonatomic) NSMutableArray *allModelArray;
+
 @end
 
 @implementation BSVideoTableView
 -(void)viewDidLoad {
     [super viewDidLoad];
-    [self.tableView registerClass:[BSEssenceAllClell class] forCellReuseIdentifier:ID];
+    UINib *registerNIb = [UINib nibWithNibName:NSStringFromClass([BSEssenceBaseCell class]) bundle:[NSBundle mainBundle]];
+    [self.tableView registerNib:registerNIb forCellReuseIdentifier:ID];
     [self loadDataWithKey:newKey];
 }
 
@@ -36,10 +47,19 @@ static NSString * const ID = @"cellVideo";
     return _allModelArray.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    BSEssenceAllClell *cell = [tableView dequeueReusableCellWithIdentifier:ID forIndexPath:indexPath];
     BSEssenceAllModel *model = _allModelArray[indexPath.row];
-    cell.allModelCell = model;
+    BSEssenceBaseCell *cell = [tableView dequeueReusableCellWithIdentifier:ID forIndexPath:indexPath];
+
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showVideoPlayer:)];
+//    cell.contentPhotoView addGeest
+    [cell.contentVideoView addGestureRecognizer:tap];
+    cell.contentVideoView.tag = indexPath.row;
+    cell.cellItems = model;
     return cell;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    BSEssenceAllModel *model = _allModelArray[indexPath.row];
+    return model.row_height;
 }
 #pragma mark - loadData
 - (void)loadDataWithKey:(NSString *)key {
@@ -56,7 +76,7 @@ static NSString * const ID = @"cellVideo";
         tempArray = [BSEssenceAllModel mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
         //下拉刷新的时候清空再拉取
         if (isGetRefresh) {
-            self.allModelArray=nil;
+            [self cleanModelArray];
             for (BSEssenceAllModel *model in tempArray) {
                 [self.allModelArray addObject:model];
             }
@@ -84,14 +104,47 @@ static NSString * const ID = @"cellVideo";
     [self loadDataWithKey:moreKey];
     [super loadMoreData];
 }
-
+- (void)cleanModelArray {
+    [self.allModelArray removeAllObjects];
+    self.allModelArray = nil;
+}
 #pragma mark - 懒加载
-
 - (NSMutableArray *)allModelArray {
     if (!_allModelArray) {
         _allModelArray =[NSMutableArray array];
     }
     return _allModelArray;
 }
-
+#pragma mark - 播放器逻辑
+- (void)showVideoPlayer:(UITapGestureRecognizer *)tapGesture {
+    [_player destroyPlayer];
+    _player = nil;
+    
+    UIView *view = tapGesture.view;  // 拿到view 索引模型 cell来添加上去 tableView
+    //    XLVideoItem *item = self.videoArray[view.tag - 100];
+    BSEssenceAllModel *model = _allModelArray[view.tag];
+    _indexPath = [NSIndexPath indexPathForRow:view.tag inSection:0];
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:_indexPath];
+    
+    _player = [[XLVideoPlayer alloc] init];
+    _player.videoUrl = model.videouri;
+    [_player playerBindTableView:self.tableView currentIndexPath:_indexPath];
+    _player.frame = view.frame;
+    
+    [cell.contentView addSubview:_player];
+    
+    _player.completedPlayingBlock = ^(XLVideoPlayer *player) {
+        [player destroyPlayer];
+        _player = nil;
+    };
+}
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if ([scrollView isEqual:self.tableView]) {
+        [_player playerScrollIsSupportSmallWindowPlay:NO];
+    }
+}
+-(void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    BSLog(@"我要消失了!");
+}
 @end
