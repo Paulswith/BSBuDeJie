@@ -42,6 +42,7 @@
 		92CB53841F7E3FC30074709F /* UIColor+RandomColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 92CB53831F7E3FC30074709F /* UIColor+RandomColor.m */; };
 		92F9E4221F96043800CDE92A /* BSRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F9E4211F96043800CDE92A /* BSRefreshView.m */; };
 		92F9E4251F960BF900CDE92A /* BSLoadMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F9E4241F960BF900CDE92A /* BSLoadMoreView.m */; };
+		C7053BED1F9D560800EF2FD8 /* BSAllTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C7053BEC1F9D560800EF2FD8 /* BSAllTableView.m */; };
 		C7141A791F81E8F800883E2A /* LaunchImage-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7141A741F81E8F800883E2A /* LaunchImage-568h@2x.png */; };
 		C7141A7A1F81E8F800883E2A /* LaunchImage-700@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7141A751F81E8F800883E2A /* LaunchImage-700@2x.png */; };
 		C7141A7B1F81E8F800883E2A /* LaunchImage-800-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7141A761F81E8F800883E2A /* LaunchImage-800-667h@2x.png */; };
@@ -154,6 +155,7 @@
 		92F9E4231F960BF900CDE92A /* BSLoadMoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BSLoadMoreView.h; path = ../../Essence/EssenceTopsController/View/BSLoadMoreView.h; sourceTree = "<group>"; };
 		92F9E4241F960BF900CDE92A /* BSLoadMoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSLoadMoreView.m; path = ../../Essence/EssenceTopsController/View/BSLoadMoreView.m; sourceTree = "<group>"; };
 		B995312AF3AD99964CD0C1BE /* Pods-BSBuDeJie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSBuDeJie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BSBuDeJie/Pods-BSBuDeJie.debug.xcconfig"; sourceTree = "<group>"; };
+		C7053BEC1F9D560800EF2FD8 /* BSAllTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSAllTableView.m; sourceTree = "<group>"; };
 		C7141A741F81E8F800883E2A /* LaunchImage-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-568h@2x.png"; sourceTree = "<group>"; };
 		C7141A751F81E8F800883E2A /* LaunchImage-700@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-700@2x.png"; sourceTree = "<group>"; };
 		C7141A761F81E8F800883E2A /* LaunchImage-800-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-800-667h@2x.png"; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 				C7547A2D1F93628500C45E68 /* BSEssenceBisicTableViewController.h */,
 				C7547A2E1F93628500C45E68 /* BSEssenceBisicTableViewController.m */,
 				921F83CE1F9145D100305AA7 /* BSAllTableView.h */,
+				C7053BEC1F9D560800EF2FD8 /* BSAllTableView.m */,
 				921F83D41F9145FC00305AA7 /* BSVideoTableView.h */,
 				921F83D51F9145FC00305AA7 /* BSVideoTableView.m */,
 				921F83D71F91460700305AA7 /* BSPhotoTableView.h */,
@@ -1055,6 +1058,7 @@
 				92CB53801F7E3FB60074709F /* UIImage+Catogory.m in Sources */,
 				C78809041F825CD6002F2D90 /* BSFollowItem.m in Sources */,
 				921F83D91F91460700305AA7 /* BSPhotoTableView.m in Sources */,
+				C7053BED1F9D560800EF2FD8 /* BSAllTableView.m in Sources */,
 				C78A294F1F9BBE760051315B /* XLVideoPlayer.m in Sources */,
 				C7F951541F8367530002CC7C /* BSHeadBottomBtn.m in Sources */,
 				923866101F7B98A600ABD2DF /* BSNewPostViewController.m in Sources */,

@@ -37,7 +37,7 @@
         CGFloat y = _row_height + 10; //目前为止计算的高度为y, 和infoLbel的间距补10
         CGFloat frame_width = screenW - 2 * allCellSpace;
         CGFloat frame_height = (frame_width/_width) * _height;
-        if (_height > screenH) {
+        if (_height > (screenH * 3/4)) {
             // 图片类型, 且长图(height大于屏幕宽度的), 裁剪为固定高度200
             frame_height = 300;
             BSLog(@"找到一个长图:%ld",_height);
