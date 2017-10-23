@@ -10,15 +10,16 @@
 #import "BSEssenceAllModel.h"
 //#import <SDWebImage/UIImageView+WebCache.h>
 #import <SDWebImage/UIImageView+WebCache.h>
+#import <AVFoundation/AVFoundation.h>
+
 
 @interface BSEssenceSoundView()
 @property (weak, nonatomic) IBOutlet UIImageView *bottomImageView;
 @property (weak, nonatomic) IBOutlet UIButton *playStatuBtn;
 @property (weak, nonatomic) IBOutlet UILabel *playCountLabel;
 @property (weak, nonatomic) IBOutlet UILabel *playTimerLabel;
-
-
-
+@property(strong,nonatomic) AVPlayer *player; //声频播放器
+@property(strong,nonatomic) AVPlayerItem *playVoiceItem;
 
 @end
 
@@ -27,6 +28,23 @@
 
 + (instancetype)soundViewFromXib {
     return [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:nil options:nil].firstObject;
+}
+- (IBAction)playTap:(UIButton *)sender {
+    BSLog(@"save:%@ -- current:%@",self.playVoiceItem,self.player.currentItem);
+    if (self.playVoiceItem == nil) {
+        [self.player pause];
+        //不同的btn,不同的item值, 点击不同的时候都是Nil.~  绝望
+    }
+    if (self.playStatuBtn.selected) {
+        [self.player pause];
+    }else {
+        AVPlayerItem *playVoiceItem =  [AVPlayerItem playerItemWithURL:[NSURL URLWithString:_soundModel.voiceuri]];
+        self.playVoiceItem = playVoiceItem;
+        [self.player replaceCurrentItemWithPlayerItem:playVoiceItem];
+        BSLog(@"playVoiceItem : %@, playItem%@)",playVoiceItem,self.player.currentItem);
+        [self.player play];
+    }
+    self.playStatuBtn.selected = !sender.selected;
 }
 -(void)setSoundModel:(BSEssenceAllModel *)soundModel {
     _soundModel = soundModel;
@@ -38,15 +56,16 @@
      
      */
     [self.bottomImageView sd_setImageWithURL:[NSURL URLWithString:soundModel.image1]];
-//    [self.bottomImageView sd_setImageWithURL:[NSURL URLWithString:soundModel.cdn_img] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
-//        BSLog(@"image:%@, imageFrame:%@",image,NSStringFromCGSize(image.size));
-//        self.bottomImageView.image = image;
-//    }];
-    
     BSLog(@"%@, %@, %@, %@,",soundModel.voiceuri,soundModel.voicetime, soundModel.voicelength,soundModel.playfcount);
     
     
     
 }
-
+- (AVPlayer *)player {
+    if (!_player) {
+        AVAudioPlayer
+        _player = [[AVPlayer alloc] init];
+    }
+    return _player;
+}
 @end

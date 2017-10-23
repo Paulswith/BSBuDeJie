@@ -41,6 +41,9 @@
                     </constraints>
                     <state key="normal" backgroundImage="playButtonPlay"/>
                     <state key="selected" backgroundImage="playButtonPause"/>
+                    <connections>
+                        <action selector="playTap:" destination="iN0-l3-epB" eventType="touchUpInside" id="822-Mp-eJN"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -61,7 +64,7 @@
             <connections>
                 <outlet property="bottomImageView" destination="zVe-r4-w4L" id="q3j-u7-6IM"/>
                 <outlet property="playCountLabel" destination="UVd-hI-pKj" id="IlK-ls-gyz"/>
-                <outlet property="playStatuBtn" destination="KaM-ML-fj0" id="eHt-zS-H5X"/>
+                <outlet property="playStatuBtn" destination="KaM-ML-fj0" id="ZMg-Je-DI9"/>
                 <outlet property="playTimerLabel" destination="yw8-w7-fuh" id="2y5-sY-sZ2"/>
             </connections>
             <point key="canvasLocation" x="34.5" y="53.5"/>
