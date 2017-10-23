@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>FLAnimatedImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>MJExtension.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,12 +47,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>117638DBEBEBC78CBEC514C99F679AA1</key>
+		<key>53F8571E2D572C4069860E38654A566A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>723828B932A29133AE5DBEB26758B2A4</key>
+		<key>9D3C97FB34EE54EFD8970DB74E191D7D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -62,7 +67,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AF3FD52F7A5CC4C8FBDF3984D05ED2A4</key>
+		<key>E36BC235C6F138BD5DD1B3482237000E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EED7B57748CF4D5681AB2BAB93C285BE</key>
 		<dict>
 			<key>primary</key>
 			<true/>

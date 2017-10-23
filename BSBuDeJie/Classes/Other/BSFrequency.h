@@ -21,5 +21,6 @@ UIKIT_EXTERN NSString * const BSEssenceMaxTime; //二次加载的缓存key
 UIKIT_EXTERN NSString * const BSMainRUL;   // 后台接口的主域名
 UIKIT_EXTERN NSUInteger const bestCommontViewHeight; // Essence最佳评论View的高度
 UIKIT_EXTERN NSUInteger const allCellSpace; //essence设计的通用间距
+//UIKIT_EXTERN CGFloat const defaultCellWidth; //cell的默认宽度
 
 @end

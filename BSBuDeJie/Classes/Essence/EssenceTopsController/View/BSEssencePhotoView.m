@@ -26,20 +26,20 @@
 }
 - (void)setPhotoItems:(BSEssenceAllModel *)photoItems {
     _photoItems = photoItems;
-    if (photoItems.is_gif==0) {
-        [self.gifIcon removeFromSuperview];
-    }
+    NSLog(@"%@",photoItems.text);
     NSURL *ImageURL = [NSURL URLWithString:photoItems.cdn_img];
-    if (photoItems.is_gif == YES) {
+    if (photoItems.is_gif) {
         // gif直接给图就可以, 这个框架很牛瓣,感谢FL
         [self.imageView sd_setImageWithURL:ImageURL];
     }else {
+        [self.gifIcon removeFromSuperview];
         [self.imageView sd_setImageWithURL:ImageURL completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
             if (photoItems.larger_pic) {
+                CGFloat clipWidth = screenW - 20; //采用默认宽度
                 //如果是大图就进行裁剪下,根据frame的矩形,没错,就是要高度而已~ 这里是主线程!
                 CGFloat clipHeight = photoItems.contentViewFrame.size.height;
-                UIGraphicsBeginImageContextWithOptions(CGSizeMake(image.size.width, clipHeight), NO, 0);
-                UIBezierPath *path = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, image.size.width, clipHeight)];
+                UIGraphicsBeginImageContextWithOptions(CGSizeMake(clipWidth, clipHeight), NO, 0);
+                UIBezierPath *path = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, clipWidth, clipHeight)];
                 [path addClip];
                 [image drawAtPoint:CGPointZero];
                 image = UIGraphicsGetImageFromCurrentImageContext();

@@ -35,12 +35,23 @@
     if (_type != BSEssenceTypeJoke) {
         CGFloat x = allCellSpace;
         CGFloat y = _row_height + 10; //目前为止计算的高度为y, 和infoLbel的间距补10
-        CGFloat frame_width = screenW - 2 * allCellSpace;
+        CGFloat defaultWidth = screenW - 2 * allCellSpace;
+        CGFloat frame_width = defaultWidth;
         CGFloat frame_height = (frame_width/_width) * _height;
         if (_height > (screenH * 3/4)) {
-            // 图片类型, 且长图(height大于屏幕宽度的), 裁剪为固定高度200
+            // 图片类型, 且长图(height大于屏幕宽度3/4的), 裁剪为固定高度300
             frame_height = 300;
-            BSLog(@"找到一个长图:%ld",_height);
+            //对高>宽视频处理,  公式为: 当前高/下发高, 得到缩小比例 .      该比例 * 下发宽 , 得到需要展示的宽度, 但是部分需要过滤
+            frame_width = (frame_height/_height) * _width;
+            // 宽超默认宽的长视频, 指定默认宽
+            if (frame_width > defaultWidth) {
+                frame_width = defaultWidth;
+            }
+            // 图片类型的长图 , 默认宽
+            if (_type == BSEssenceTypePhoto) {
+                frame_width = defaultWidth;
+            }
+            BSLog(@"找到一个长图,调整为:(%f,%f)",frame_width,frame_height);
             _larger_pic = YES;
         }
         _contentViewFrame = CGRectMake(x, y, frame_width, frame_height);

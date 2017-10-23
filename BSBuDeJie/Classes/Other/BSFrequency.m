@@ -21,7 +21,7 @@ NSString * const BSEssenceMaxTime = @"BSEssenceMaxTime";
 NSString * const BSMainRUL = @"http://api.budejie.com/api/api_open.php";
 NSUInteger const bestCommontViewHeight = 42;
 NSUInteger const allCellSpace = 10;
-
+//CGFloat const defaultCellWidth = screenW - 20;
 
 
 @end

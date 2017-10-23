@@ -30,7 +30,7 @@ typedef NS_OPTIONS(NSInteger, BSEssenceType)
 @property(assign,nonatomic) NSInteger hate; //踩的数量
 @property(assign,nonatomic) NSInteger love; //收藏量- 赞吧
 @property(assign,nonatomic) NSInteger type; //类型
-@property(assign,nonatomic) NSInteger is_gif; //是否为gif图类型 ,否为Png
+@property(assign,nonatomic) BOOL is_gif; //是否为gif图类型 ,否为Png
 @property(assign,nonatomic) NSInteger height; //图片或视频等其他的内容的高度
 @property(assign,nonatomic) NSInteger width; //图片或视频等其他的内容的宽度
 @property(strong,nonatomic) NSString *cdn_img; // gif / png / 视频封面的图片Url
