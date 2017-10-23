@@ -41,6 +41,7 @@ typedef NS_OPTIONS(NSInteger, BSEssenceType)
 @property(assign,nonatomic) CGFloat row_height; //自定义缓存高度
 @property(assign,nonatomic) CGRect contentViewFrame; //
 @property (assign, nonatomic) BOOL larger_pic; //是否为大图
+@property (assign, nonatomic) BOOL hasBestCommont; //是否为大图
 @property (strong, nonatomic) UITableView *bindTableView; //播放器需要绑定的
 @property (strong, nonatomic) NSIndexPath *bindIndexPath; //播放器需要绑定的
 

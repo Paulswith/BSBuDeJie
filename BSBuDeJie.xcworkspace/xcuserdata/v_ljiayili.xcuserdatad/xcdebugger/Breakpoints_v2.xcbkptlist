@@ -78,16 +78,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BSBuDeJie/Classes/Essence/EssenceTopsController/View/BSEssenceBaseCell.m"
-            timestampString = "530198633.826864"
+            filePath = "BSBuDeJie/Classes/Essence/EssenceTopsController/Controller/BSAllTableView.m"
+            timestampString = "530425979.513834"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "-setCellItems:"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

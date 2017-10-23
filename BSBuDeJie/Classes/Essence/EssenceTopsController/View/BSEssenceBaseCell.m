@@ -56,14 +56,18 @@
     [self.commentBtn setTitle:[NSString stringWithFormat:@"%ld",cellItems.comment] forState:UIControlStateNormal];
     [self.updateTimeLabel setText:cellItems.passtime];
 
-    if (cellItems.top_cmt.count > 0) {
+    if (cellItems.hasBestCommont) {
         NSString *content = cellItems.top_cmt[0][@"content"];
         NSString *userName = cellItems.top_cmt[0][@"user"][@"username"];
-        self.bestCommentUserLabel.text = userName;
+        self.bestCommentUserLabel.text = [NSString stringWithFormat:@"%@:",userName];
         self.bestCommontContentLabel.text = content;
-    }else {
-        [self.bestCommentView removeFromSuperview];
+        self.bestCommentView.hidden = NO;
+    }else{
+        self.bestCommentView.hidden = YES;
     }
+//    }else {
+//        [self.bestCommentView removeFromSuperview];
+//    }
     
     //  判断是哪种类型的加载一下类型
     if (cellItems.type == BSEssenceTypePhoto) {
@@ -96,6 +100,7 @@
         //仅这里需要展示最佳评论
         self.contentSoundView.frame = _cellItems.contentViewFrame;
     }
+//    self.bestCommentView.y -=10;
 }
 
 - (void)awakeFromNib {

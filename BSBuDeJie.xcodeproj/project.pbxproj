@@ -25,7 +25,6 @@
 		924057591F97368A009900EC /* BSEssenceAllClell.m in Sources */ = {isa = PBXBuildFile; fileRef = 924057581F97368A009900EC /* BSEssenceAllClell.m */; };
 		9240575F1F9750E7009900EC /* BSStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9240575E1F9750E7009900EC /* BSStartViewController.m */; };
 		924057631F975159009900EC /* BSDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = 924057621F975159009900EC /* BSDownload.m */; };
-		9269DF7F1F9D8A090002F907 /* all.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9269DF7E1F9D8A090002F907 /* all.gif */; };
 		92839B541F98921400611FCC /* BSEssenceBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92839B521F98921400611FCC /* BSEssenceBaseCell.m */; };
 		92839B551F98921400611FCC /* BSEssenceBaseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92839B531F98921400611FCC /* BSEssenceBaseCell.xib */; };
 		92B4D8951F9999AC00B589D3 /* BSEssencePhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B4D8941F9999AC00B589D3 /* BSEssencePhotoView.m */; };
@@ -126,7 +125,6 @@
 		9240575E1F9750E7009900EC /* BSStartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSStartViewController.m; sourceTree = "<group>"; };
 		924057611F975159009900EC /* BSDownload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSDownload.h; sourceTree = "<group>"; };
 		924057621F975159009900EC /* BSDownload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSDownload.m; sourceTree = "<group>"; };
-		9269DF7E1F9D8A090002F907 /* all.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = all.gif; sourceTree = "<group>"; };
 		92839B511F98921400611FCC /* BSEssenceBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSEssenceBaseCell.h; sourceTree = "<group>"; };
 		92839B521F98921400611FCC /* BSEssenceBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSEssenceBaseCell.m; sourceTree = "<group>"; };
 		92839B531F98921400611FCC /* BSEssenceBaseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSEssenceBaseCell.xib; sourceTree = "<group>"; };
@@ -471,7 +469,6 @@
 		923865FC1F7B951B00ABD2DF /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				9269DF7E1F9D8A090002F907 /* all.gif */,
 				92839B591F98A22C00611FCC /* componet */,
 				924057601F97511B009900EC /* DownloadTools */,
 				9240575C1F9750C0009900EC /* StartSettings */,
@@ -954,7 +951,6 @@
 				C78A294D1F9BBE760051315B /* ImageResources.bundle in Resources */,
 				C7F9514E1F83607D0002CC7C /* BSQuickLogin.xib in Resources */,
 				C78809091F825FDB002F2D90 /* BSTableViewCell.xib in Resources */,
-				9269DF7F1F9D8A090002F907 /* all.gif in Resources */,
 				923865E41F7B4BA700ABD2DF /* LaunchScreen.storyboard in Resources */,
 				92B4D8971F9999BE00B589D3 /* BSEssencePhotoView.xib in Resources */,
 				C7141A7B1F81E8F800883E2A /* LaunchImage-800-667h@2x.png in Resources */,

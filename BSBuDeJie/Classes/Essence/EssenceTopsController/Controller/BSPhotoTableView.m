@@ -11,7 +11,6 @@
 #import <AFNetworking/AFNetworking.h>
 #import <MJExtension/MJExtension.h>
 #import "BSEssenceAllModel.h"
-//#import "BSEssenceAllClell.h"
 #import "BSEssenceBaseCell.h"
 #import "BSDownload.h"
 
