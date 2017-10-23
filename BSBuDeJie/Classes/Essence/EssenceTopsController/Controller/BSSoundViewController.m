@@ -15,12 +15,17 @@
 #import "BSEssenceAllClell.h"
 #import "BSDownload.h"
 #import "BSEssenceBaseCell.h"
+#import <AVFoundation/AVFoundation.h>
 
 #define newKey Essence_sound_new
 #define moreKey Essence_sound_more
 static NSString * const ID = @"cellSound";
 @interface BSSoundViewController ()
 @property(strong,nonatomic) NSMutableArray *allModelArray;
+@property(strong,nonatomic) AVPlayer *player; //声频播放器
+@property(strong,nonatomic) AVPlayerItem *playVoiceItem;
+@property (strong, nonatomic) UIButton *playVoiceBtn;
+//@property (assign, nonatomic) BOOL isPlaySelect;
 @end
 
 @implementation BSSoundViewController
@@ -41,9 +46,45 @@ static NSString * const ID = @"cellSound";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     BSEssenceBaseCell *cell = [tableView dequeueReusableCellWithIdentifier:ID forIndexPath:indexPath];
     BSEssenceAllModel *model = _allModelArray[indexPath.row];
+    UIView *view =  cell.contentSoundView;
+    for (UIView *subView in view.subviews) {
+        if ([subView isKindOfClass:[UIButton class]]) {
+            UIButton *subBtn = (UIButton *)subView;
+            subBtn.tag = indexPath.row;
+            [subBtn addTarget:self action:@selector(playVoice:) forControlEvents:UIControlEventTouchDown];
+        }
+    }
     cell.cellItems = model;
     return cell;
 }
+- (void)playVoice:(UIButton *)sender {
+    BSEssenceAllModel *model = _allModelArray[sender.tag];
+    
+    if (self.playVoiceBtn.isSelected) {
+        //之前若是选中的, 就暂停. 且取消之前的选中状态
+        [self.playVoiceBtn setSelected:NO];
+        [self.player pause];
+    }else {
+        BSEssenceAllModel *model = _allModelArray[sender.tag];
+        model.vioceSelect = sender.selected;
+        AVPlayerItem *playVoiceItem =  [AVPlayerItem playerItemWithURL:[NSURL URLWithString:model.voiceuri]];
+        
+        self.playVoiceItem = playVoiceItem;
+        [self.player replaceCurrentItemWithPlayerItem:playVoiceItem];
+        [self.player play];
+    }
+    sender.selected = !sender.selected;
+    model.vioceSelect = sender.selected;
+    self.playVoiceBtn = sender;
+//    sender.selected = !self.playVoiceBtn.selected; //1 sender为已sele, 2
+//    self.playVoiceBtn.selected = !sender;
+//    self.playVoiceBtn.selected = sender.selected;
+//    self.playVoiceBtn.selected = NO;
+    
+    
+}
+
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     BSEssenceAllModel *model = _allModelArray[indexPath.row];
     return model.row_height;
@@ -112,5 +153,11 @@ static NSString * const ID = @"cellSound";
         _allModelArray =[NSMutableArray array];
     }
     return _allModelArray;
+}
+- (AVPlayer *)player {
+    if (!_player) {
+        _player = [AVPlayer new];
+    }
+    return _player;
 }
 @end

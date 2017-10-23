@@ -36,7 +36,7 @@ typedef NS_OPTIONS(NSInteger, BSEssenceType)
 @property(strong,nonatomic) NSString *cdn_img; // gif / png / 视频封面的图片Url
 @property(strong,nonatomic) NSString *image1; // gif / png / 视频封面的图片Url
 @property(strong,nonatomic) NSString *image2; // gif / png / 视频封面的图片Url
-@property(strong,nonatomic) NSString *image3; // gif / png / 视频封面的图片Url
+
 
 @property(strong,nonatomic) NSString *videouri; // 视频url
 @property(strong,nonatomic) NSArray *top_cmt; // 最佳评论
@@ -44,6 +44,7 @@ typedef NS_OPTIONS(NSInteger, BSEssenceType)
 @property(strong,nonatomic) NSString *voicetime; //音频时间
 @property(strong,nonatomic) NSString *voicelength; //音频时长
 @property(strong,nonatomic) NSArray *playfcount; //播放次数
+@property(assign,nonatomic) BOOL vioceSelect; // 选中为选中状态
 
 // 非后台下发数据,自缓存部分
 @property(assign,nonatomic) CGFloat row_height; //自定义缓存高度
