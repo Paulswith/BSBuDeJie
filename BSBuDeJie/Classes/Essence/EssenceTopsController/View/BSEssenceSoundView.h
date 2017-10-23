@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class BSEssenceAllModel;
 @interface BSEssenceSoundView : UIView
+
+@property(strong,nonatomic) BSEssenceAllModel *soundModel; 
 + (instancetype)soundViewFromXib;
 @end

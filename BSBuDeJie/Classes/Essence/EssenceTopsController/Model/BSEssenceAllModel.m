@@ -60,9 +60,9 @@
         _row_height += bestCommontViewHeight;
         _hasBestCommont = YES;
     }
-    _row_height += frameHeight + 10 + 10; //加上计算后的高度和间距  补10到bottomView间距
+    _row_height += frameHeight + 10 + 10; //加上计算后的高度和间距  补10到bottomView间距  + 不知道哪来的10~~
 //    NSLog(@"当前类型为[%ld],(w=%ld,h=%ld)计算内容View得[%f], 最终得到->[%f]",_type,_width,_height,frameHeight,_row_height);
-    _row_height += (30 + 10); //底部bottomHeight:30 +cell之间的10 + 不知道哪来的10~~
+    _row_height += (30 + 10); //底部bottomHeight:30 +cell之间的10
     return _row_height;
 }
 

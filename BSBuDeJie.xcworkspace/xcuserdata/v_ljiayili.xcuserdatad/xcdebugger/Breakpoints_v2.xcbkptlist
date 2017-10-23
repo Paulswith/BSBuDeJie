@@ -91,5 +91,69 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BSBuDeJie/Classes/Essence/EssenceTopsController/Controller/BSSoundViewController.m"
+            timestampString = "530445024.355439"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BSBuDeJie/Classes/Essence/EssenceTopsController/View/BSEssenceSoundView.m"
+            timestampString = "530445270.114417"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "-setSoundModel:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[BSEssenceSoundView setSoundModel:]"
+                  moduleName = "BSBuDeJie"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/v_ljiayili/OCProject/BSBuDeJie/BSBuDeJie/Classes/Essence/EssenceTopsController/View/BSEssenceSoundView.m"
+                  timestampString = "530445342.023995"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "75">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__36-[BSEssenceSoundView setSoundModel:]_block_invoke"
+                  moduleName = "BSBuDeJie"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/v_ljiayili/OCProject/BSBuDeJie/BSBuDeJie/Classes/Essence/EssenceTopsController/View/BSEssenceSoundView.m"
+                  timestampString = "530445342.024978"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "19">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

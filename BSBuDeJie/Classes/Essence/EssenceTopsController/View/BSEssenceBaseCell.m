@@ -79,6 +79,7 @@
         [self.contentSoundView removeFromSuperview];
         [self.contentPhotoView removeFromSuperview];
     }else if (cellItems.type == BSEssenceTypeSound) {
+        self.contentSoundView.soundModel = cellItems;
         [self.contentVideoView removeFromSuperview];
         [self.contentPhotoView removeFromSuperview];
         // 如果在这里添加View上去, 会有乱七八糟的坑~ 有些都没有移除掉

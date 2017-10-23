@@ -14,9 +14,10 @@
 #import "BSEssenceAllModel.h"
 #import "BSEssenceAllClell.h"
 #import "BSDownload.h"
+#import "BSEssenceBaseCell.h"
 
-#define newKey Essence_photo_new
-#define moreKey Essence_photo_more
+#define newKey Essence_sound_new
+#define moreKey Essence_sound_more
 static NSString * const ID = @"cellSound";
 @interface BSSoundViewController ()
 @property(strong,nonatomic) NSMutableArray *allModelArray;
@@ -25,7 +26,9 @@ static NSString * const ID = @"cellSound";
 @implementation BSSoundViewController
 -(void)viewDidLoad {
     [super viewDidLoad];
-    [self.tableView registerClass:[BSEssenceAllClell class] forCellReuseIdentifier:ID];
+//    [self.tableView registerClass:[BSEssenceAllClell class] forCellReuseIdentifier:ID];
+    UINib *registerNIb = [UINib nibWithNibName:NSStringFromClass([BSEssenceBaseCell class]) bundle:[NSBundle mainBundle]];
+    [self.tableView registerNib:registerNIb forCellReuseIdentifier:ID];
     [self loadDataWithKey:newKey];
 }
 
@@ -35,11 +38,20 @@ static NSString * const ID = @"cellSound";
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return _allModelArray.count;
 }
-- (BSEssenceAllClell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    BSEssenceAllClell *cell = [tableView dequeueReusableCellWithIdentifier:ID forIndexPath:indexPath];
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    BSEssenceBaseCell *cell = [tableView dequeueReusableCellWithIdentifier:ID forIndexPath:indexPath];
     BSEssenceAllModel *model = _allModelArray[indexPath.row];
-    cell.allModelCell = model;
+    cell.cellItems = model;
     return cell;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    BSEssenceAllModel *model = _allModelArray[indexPath.row];
+    return model.row_height;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [super tableView:tableView didSelectRowAtIndexPath:indexPath];
+    BSEssenceAllModel *model =  _allModelArray[indexPath.row];
+    BSLog(@"model:%@",model.description);
 }
 #pragma mark - loadData
 - (void)loadDataWithKey:(NSString *)key {
@@ -60,7 +72,8 @@ static NSString * const ID = @"cellSound";
               tempArray = [BSEssenceAllModel mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
               //下拉刷新的时候清空再拉取
               if (isGetRefresh) {
-                  self.allModelArray=nil;
+//                  self.allModelArray=nil;
+                  [self cleanModelArray];
                   for (BSEssenceAllModel *model in tempArray) {
                       [self.allModelArray addObject:model];
                   }
@@ -89,7 +102,10 @@ static NSString * const ID = @"cellSound";
     [self loadDataWithKey:moreKey];
     [super loadMoreData];
 }
-
+- (void)cleanModelArray {
+    [self.allModelArray removeAllObjects];
+    self.allModelArray = nil;
+}
 #pragma mark - 懒加载
 - (NSMutableArray *)allModelArray {
     if (!_allModelArray) {
