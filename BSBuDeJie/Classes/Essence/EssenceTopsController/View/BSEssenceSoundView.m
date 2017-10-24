@@ -29,25 +29,11 @@
 + (instancetype)soundViewFromXib {
     return [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:nil options:nil].firstObject;
 }
-//- (IBAction)playTap:(UIButton *)sender {
-//    
-//    BSLog(@"save:%@ -- current:%@",self.playVoiceItem,self.player.currentItem);
-//    if (self.playVoiceItem == nil) {
-//        [self.player pause];
-//        //不同的btn,不同的item值, 点击不同的时候都是Nil.~  绝望
-//    }
-//    if (self.playStatuBtn.selected) {
-//        [self.player pause];
-//    }else {
-//        AVPlayerItem *playVoiceItem =  [AVPlayerItem playerItemWithURL:[NSURL URLWithString:_soundModel.voiceuri]];
-//        self.playVoiceItem = playVoiceItem;
-//        [self.player replaceCurrentItemWithPlayerItem:playVoiceItem];
-//        BSLog(@"playVoiceItem : %@, playItem%@)",playVoiceItem,self.player.currentItem);
-//        [self.player play];
-//    }
-//    _soundModel.vioceSelect = !sender.selected;
-//    self.playStatuBtn.selected = !sender.selected;
-//}
+- (IBAction)playTap:(UIButton *)sender {
+    // 此处只负责对按钮状态的扭转 , 模型属性设置, 声音控制交付由控制器处理
+    _soundModel.vioceSelect = !sender.selected;
+    self.playStatuBtn.selected = !sender.selected;
+}
 -(void)setSoundModel:(BSEssenceAllModel *)soundModel {
     _soundModel = soundModel;
 //    self.playStatuBtn addTarget:<#(nullable id)#> action:<#(nonnull SEL)#> forControlEvents:<#(UIControlEvents)#>

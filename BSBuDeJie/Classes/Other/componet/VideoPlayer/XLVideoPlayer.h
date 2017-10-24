@@ -8,18 +8,20 @@
 //  博客：http://www.jianshu.com/users/edad244257e2/latest_articles
 
 #import <UIKit/UIKit.h>
+@class XLSlider;
 @class XLVideoPlayer;
 
 typedef void (^VideoCompletedPlayingBlock) (XLVideoPlayer *videoPlayer);
 
 @interface XLVideoPlayer : UIView
-
+@property (nonatomic, strong) XLSlider *slider;
 @property (nonatomic, copy) VideoCompletedPlayingBlock completedPlayingBlock;
 
 /**
  *  video url 视频路径
  */
 @property (nonatomic, strong) NSString *videoUrl;
+
 
 /**
  *  play or pause

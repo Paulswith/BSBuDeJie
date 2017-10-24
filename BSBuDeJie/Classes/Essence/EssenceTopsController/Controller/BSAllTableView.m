@@ -8,40 +8,61 @@
 
 #import "BSAllTableView.h"
 #import "BSRefreshView.h"
-#import <AFNetworking/AFNetworking.h>
-#import <MJExtension/MJExtension.h>
 #import "BSEssenceAllModel.h"
 #import "BSEssenceBaseCell.h"
 #import "BSDownload.h"
-#import "XLVideoPlayer.h"
-//#import "BSEssencePhotoView.h"
 #import "BSEssenceVideoView.h"
+#import "XLVideoPlayer.h"
+#import <AVFoundation/AVFoundation.h>
+#import <AFNetworking/AFNetworking.h>
+#import <MJExtension/MJExtension.h>
+#import "XLSlider.h"
+
 
 #define newKey Essence_all_new
 #define moreKey Essence_all_more
-static NSString * const ID = @"cellALL";
+static NSString * const ID = @"BSAllTableView";
+/*
+@interface AVPlayBE:NSObject
 
++ (instancetype)shareInstance;
+
+@property(strong,nonatomic) XLVideoPlayer *_AVplayer;
+@end
+@implementation AVPlayBE
+
++ (instancetype)shareInstance {
+    static AVPlayBE* _instance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _instance = [[self alloc] init] ;
+        _instance._AVplayer = [[XLVideoPlayer alloc]init];
+    });
+    return _instance;
+}
+
+@end
+ */
 @interface BSAllTableView ()
 {
     NSIndexPath *_indexPath;
-    XLVideoPlayer *_player;
-    CGRect _currentPlayCellRect;
+    XLVideoPlayer *_AVplayer;
+//    CGRect _currentPlayCellRect;
 }
-
+//@property(strong,nonatomic) AVPlayBE *AVplayer;
+@property(strong,nonatomic) AVPlayer *viocePlayer; //用来播放声音
 @property(strong,nonatomic) NSMutableArray<__kindof BSEssenceAllModel *> *allModelArray;
 @end
 
 @implementation BSAllTableView
--(void)viewDidLoad {
+- (void)viewDidLoad {
     [super viewDidLoad];
+//    _AVplayer = [AVPlayBE shareInstance];
     [self loadDataWithKey:newKey];
     UINib *registerNIb = [UINib nibWithNibName:NSStringFromClass([BSEssenceBaseCell class]) bundle:[NSBundle mainBundle]];
     [self.tableView registerNib:registerNIb forCellReuseIdentifier:ID];
 }
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-//    _videoPlayer = [[XLVideoPlayer alloc] init]; 
-}
+
 #pragma mark - loadData 
 - (void)loadDataWithKey:(NSString *)key {
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
@@ -82,13 +103,24 @@ static NSString * const ID = @"cellALL";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     BSEssenceAllModel *model = _allModelArray[indexPath.row];
     BSEssenceBaseCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    cell.cellItems = model;
+    // 视频cell进行添加手势
     if (model.type == BSEssenceTypeVideo) {
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showVideoPlayer:)];
         [cell.contentVideoView addGestureRecognizer:tap];
         cell.contentVideoView.tag = indexPath.row + 100;
     }
-    
-    cell.cellItems = model;
+    // 视频cell进行添加手势
+    if (model.type == BSEssenceTypeSound) {
+        UIView *view =  cell.contentSoundView;
+        for (UIView *subView in view.subviews) {
+            if ([subView isKindOfClass:[UIButton class]]) {
+                UIButton *subBtn = (UIButton *)subView;
+                subBtn.tag = indexPath.row;
+                [subBtn addTarget:self action:@selector(playVoice:) forControlEvents:UIControlEventTouchDown];
+            }
+        }
+    }
     return cell;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -97,6 +129,11 @@ static NSString * const ID = @"cellALL";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [super tableView:tableView didSelectRowAtIndexPath:indexPath];
     BSEssenceAllModel *model = _allModelArray[indexPath.row];
+
+//    _AVplayer.completedPlayingBlock = ^(XLVideoPlayer *player) {
+//        [player destroyPlayer];
+//    };
+//    _AVplayer.slider.value = 1.0;
     NSLog(@"%@ ",model.description);
 }
 
@@ -125,37 +162,57 @@ static NSString * const ID = @"cellALL";
     self.allModelArray = nil;
 }
 #warning Mark一个bug, 清除缓存再双击tab,则gif不播放了,类似是按了暂停,或者载入的缓存图以清除,但gifImage不知道
-//-(void)dealloc {
-//    _videoPlayer = nil;
-//}
 
+#pragma mark - palyAction
 - (void)showVideoPlayer:(UITapGestureRecognizer *)tapGesture {
-    [_player destroyPlayer];
-    _player = nil;
+    // 把之前的播放器干掉
+    [_AVplayer destroyPlayer];
+    _AVplayer = nil;
     
+    // 重新载入新播放器
     UIView *view = tapGesture.view;  // 拿到view 索引模型 cell来添加上去 tableView
-//    XLVideoItem *item = self.videoArray[view.tag - 100];
     BSEssenceAllModel *model = _allModelArray[view.tag - 100];
     _indexPath = [NSIndexPath indexPathForRow:view.tag - 100 inSection:0];
     UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:_indexPath];
     
-    _player = [[XLVideoPlayer alloc] init];
-    _player.videoUrl = model.videouri;
-    [_player playerBindTableView:self.tableView currentIndexPath:_indexPath];
-    _player.frame = view.frame;
+    _AVplayer = [[XLVideoPlayer alloc] init];
+//    _AVplayer = [AVPlayBE shareInstance]._AVplayer;
+    _AVplayer.videoUrl = model.videouri;
+    [_AVplayer playerBindTableView:self.tableView currentIndexPath:_indexPath];
+    _AVplayer.frame = view.frame;
+    [cell.contentView addSubview:_AVplayer];
     
-    [cell.contentView addSubview:_player];
-    
-    _player.completedPlayingBlock = ^(XLVideoPlayer *player) {
+    _AVplayer.completedPlayingBlock = ^(XLVideoPlayer *player) {
         [player destroyPlayer];
-        _player = nil;
+        _AVplayer = nil;
     };
 }
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if ([scrollView isEqual:self.tableView]) {
-        [_player playerScrollIsSupportSmallWindowPlay:NO];
+- (void)playVoice:(UIButton *)sender {
+    if (sender.isSelected) {
+        //之前若是选中的, 就暂停. 且取消之前的选中状态
+        [self.viocePlayer pause];
+    }else {
+        BSEssenceAllModel *model = _allModelArray[sender.tag];
+        model.vioceSelect = sender.selected;
+        AVPlayerItem *playVoiceItem =  [AVPlayerItem playerItemWithURL:[NSURL URLWithString:model.voiceuri]];
+        //        self.playVoiceItem = playVoiceItem;
+        [self.viocePlayer replaceCurrentItemWithPlayerItem:playVoiceItem];
+        [self.viocePlayer play];
     }
-//    _player 
+}
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    //是否展示视频小窗
+    if ([scrollView isEqual:self.tableView]) {
+        [_AVplayer playerScrollIsSupportSmallWindowPlay:NO];
+    }
+}
+
+#pragma mark - lazyLoad
+- (AVPlayer *)viocePlayer {
+    if (!_viocePlayer) {
+        _viocePlayer = [[AVPlayer alloc] init];
+    }
+    return _viocePlayer;
 }
 
 @end

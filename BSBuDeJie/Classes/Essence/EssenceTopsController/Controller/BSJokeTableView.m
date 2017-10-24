@@ -15,9 +15,11 @@
 #import "BSDownload.h"
 #import "BSEssenceBaseCell.h"
 
+
 #define newKey Essence_joke_new
 #define moreKey Essence_joke_more
-static NSString * const ID = @"cellJoke";
+
+static NSString * const ID = @"BSJokeTableView";
 @interface BSJokeTableView ()
 @property(strong,nonatomic) NSMutableArray *allModelArray;
 @end

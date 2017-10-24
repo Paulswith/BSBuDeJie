@@ -40,6 +40,7 @@
 		92CB53801F7E3FB60074709F /* UIImage+Catogory.m in Sources */ = {isa = PBXBuildFile; fileRef = 92CB537D1F7E3FB60074709F /* UIImage+Catogory.m */; };
 		92CB53811F7E3FB60074709F /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 92CB537F1F7E3FB60074709F /* UIView+Frame.m */; };
 		92CB53841F7E3FC30074709F /* UIColor+RandomColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 92CB53831F7E3FC30074709F /* UIColor+RandomColor.m */; };
+		92E56CCA1F9F7CFE00D5BCC3 /* BSPlayerBoxes.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E56CC91F9F7CFE00D5BCC3 /* BSPlayerBoxes.m */; };
 		92F9E4221F96043800CDE92A /* BSRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F9E4211F96043800CDE92A /* BSRefreshView.m */; };
 		92F9E4251F960BF900CDE92A /* BSLoadMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F9E4241F960BF900CDE92A /* BSLoadMoreView.m */; };
 		C7053BED1F9D560800EF2FD8 /* BSAllTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C7053BEC1F9D560800EF2FD8 /* BSAllTableView.m */; };
@@ -150,6 +151,8 @@
 		92CB537F1F7E3FB60074709F /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		92CB53821F7E3FC30074709F /* UIColor+RandomColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+RandomColor.h"; sourceTree = "<group>"; };
 		92CB53831F7E3FC30074709F /* UIColor+RandomColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+RandomColor.m"; sourceTree = "<group>"; };
+		92E56CC81F9F7CFE00D5BCC3 /* BSPlayerBoxes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSPlayerBoxes.h; sourceTree = "<group>"; };
+		92E56CC91F9F7CFE00D5BCC3 /* BSPlayerBoxes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSPlayerBoxes.m; sourceTree = "<group>"; };
 		92F9E4201F96043800CDE92A /* BSRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BSRefreshView.h; path = ../../Essence/EssenceTopsController/View/BSRefreshView.h; sourceTree = "<group>"; };
 		92F9E4211F96043800CDE92A /* BSRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSRefreshView.m; path = ../../Essence/EssenceTopsController/View/BSRefreshView.m; sourceTree = "<group>"; };
 		92F9E4231F960BF900CDE92A /* BSLoadMoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BSLoadMoreView.h; path = ../../Essence/EssenceTopsController/View/BSLoadMoreView.h; sourceTree = "<group>"; };
@@ -576,6 +579,7 @@
 		92839B591F98A22C00611FCC /* componet */ = {
 			isa = PBXGroup;
 			children = (
+				92E56CC71F9F7CE500D5BCC3 /* PlayerBoxes */,
 				C78A29461F9BBE760051315B /* VideoPlayer */,
 				92B4D8981F999AAB00B589D3 /* ImageViewForGif */,
 				92F9E4201F96043800CDE92A /* BSRefreshView.h */,
@@ -632,6 +636,15 @@
 				C7DF66C31F8D305200C66BA3 /* BSFileTools.m */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		92E56CC71F9F7CE500D5BCC3 /* PlayerBoxes */ = {
+			isa = PBXGroup;
+			children = (
+				92E56CC81F9F7CFE00D5BCC3 /* BSPlayerBoxes.h */,
+				92E56CC91F9F7CFE00D5BCC3 /* BSPlayerBoxes.m */,
+			);
+			path = PlayerBoxes;
 			sourceTree = "<group>";
 		};
 		ABE924D149507A1CAC78E01F /* Pods */ = {
@@ -1018,6 +1031,7 @@
 				C7F9514C1F8360710002CC7C /* BSQuickLogin.m in Sources */,
 				C7D956431F8A518800A26021 /* BSMineCollectionItem.m in Sources */,
 				9240574A1F9732C3009900EC /* BSEssenceAllModel.m in Sources */,
+				92E56CCA1F9F7CFE00D5BCC3 /* BSPlayerBoxes.m in Sources */,
 				C7F829B01F89C8EE0037AA1F /* BSTextField.m in Sources */,
 				923866051F7B951B00ABD2DF /* main.m in Sources */,
 				921F83DC1F91461000305AA7 /* BSJokeTableView.m in Sources */,

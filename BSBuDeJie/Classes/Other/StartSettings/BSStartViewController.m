@@ -45,8 +45,10 @@
 //    return [BSADViewController new];  //现在直接进入广告界面即可
     
 #ifdef DEBUG
+    NSLog(@"%@",[NSBundle mainBundle].infoDictionary);
     return [[BSTabBarViewController alloc] init];
 #else
+    
     return [[BSADViewController alloc] init];
 #endif
 }

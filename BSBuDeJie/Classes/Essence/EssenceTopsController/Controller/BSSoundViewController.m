@@ -17,21 +17,19 @@
 #import "BSEssenceBaseCell.h"
 #import <AVFoundation/AVFoundation.h>
 
+
 #define newKey Essence_sound_new
 #define moreKey Essence_sound_more
-static NSString * const ID = @"cellSound";
+
+static NSString * const ID = @"BSSoundViewController";
 @interface BSSoundViewController ()
 @property(strong,nonatomic) NSMutableArray *allModelArray;
-@property(strong,nonatomic) AVPlayer *player; //声频播放器
-@property(strong,nonatomic) AVPlayerItem *playVoiceItem;
-@property (strong, nonatomic) UIButton *playVoiceBtn;
-//@property (assign, nonatomic) BOOL isPlaySelect;
+@property(strong,nonatomic) AVPlayer *viocePlayer; //声频播放器
 @end
 
 @implementation BSSoundViewController
 -(void)viewDidLoad {
     [super viewDidLoad];
-//    [self.tableView registerClass:[BSEssenceAllClell class] forCellReuseIdentifier:ID];
     UINib *registerNIb = [UINib nibWithNibName:NSStringFromClass([BSEssenceBaseCell class]) bundle:[NSBundle mainBundle]];
     [self.tableView registerNib:registerNIb forCellReuseIdentifier:ID];
     [self loadDataWithKey:newKey];
@@ -46,6 +44,8 @@ static NSString * const ID = @"cellSound";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     BSEssenceBaseCell *cell = [tableView dequeueReusableCellWithIdentifier:ID forIndexPath:indexPath];
     BSEssenceAllModel *model = _allModelArray[indexPath.row];
+    cell.cellItems = model;
+    // 对按钮添加声音处理事件管理
     UIView *view =  cell.contentSoundView;
     for (UIView *subView in view.subviews) {
         if ([subView isKindOfClass:[UIButton class]]) {
@@ -54,34 +54,7 @@ static NSString * const ID = @"cellSound";
             [subBtn addTarget:self action:@selector(playVoice:) forControlEvents:UIControlEventTouchDown];
         }
     }
-    cell.cellItems = model;
     return cell;
-}
-- (void)playVoice:(UIButton *)sender {
-    BSEssenceAllModel *model = _allModelArray[sender.tag];
-    
-    if (self.playVoiceBtn.isSelected) {
-        //之前若是选中的, 就暂停. 且取消之前的选中状态
-        [self.playVoiceBtn setSelected:NO];
-        [self.player pause];
-    }else {
-        BSEssenceAllModel *model = _allModelArray[sender.tag];
-        model.vioceSelect = sender.selected;
-        AVPlayerItem *playVoiceItem =  [AVPlayerItem playerItemWithURL:[NSURL URLWithString:model.voiceuri]];
-        
-        self.playVoiceItem = playVoiceItem;
-        [self.player replaceCurrentItemWithPlayerItem:playVoiceItem];
-        [self.player play];
-    }
-    sender.selected = !sender.selected;
-    model.vioceSelect = sender.selected;
-    self.playVoiceBtn = sender;
-//    sender.selected = !self.playVoiceBtn.selected; //1 sender为已sele, 2
-//    self.playVoiceBtn.selected = !sender;
-//    self.playVoiceBtn.selected = sender.selected;
-//    self.playVoiceBtn.selected = NO;
-    
-    
 }
 
 
@@ -94,6 +67,7 @@ static NSString * const ID = @"cellSound";
     BSEssenceAllModel *model =  _allModelArray[indexPath.row];
     BSLog(@"model:%@",model.description);
 }
+
 #pragma mark - loadData
 - (void)loadDataWithKey:(NSString *)key {
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
@@ -130,6 +104,21 @@ static NSString * const ID = @"cellSound";
           }];
 }
 
+#pragma mark - 声音播放
+- (void)playVoice:(UIButton *)sender {
+    if (sender.isSelected) {
+        //之前若是选中的, 就暂停. 且取消之前的选中状态
+        [self.viocePlayer pause];
+    }else {
+        BSEssenceAllModel *model = _allModelArray[sender.tag];
+        model.vioceSelect = sender.selected;
+        AVPlayerItem *playVoiceItem =  [AVPlayerItem playerItemWithURL:[NSURL URLWithString:model.voiceuri]];
+        //        self.playVoiceItem = playVoiceItem;
+        [self.viocePlayer replaceCurrentItemWithPlayerItem:playVoiceItem];
+        [self.viocePlayer play];
+    }
+}
+
 #pragma mark - 父类实现的方法
 - (void)doubleReloadData {
     [self loadDataWithKey:newKey];
@@ -154,10 +143,10 @@ static NSString * const ID = @"cellSound";
     }
     return _allModelArray;
 }
-- (AVPlayer *)player {
-    if (!_player) {
-        _player = [AVPlayer new];
+- (AVPlayer *)viocePlayer {
+    if (!_viocePlayer) {
+        _viocePlayer = [AVPlayer new];
     }
-    return _player;
+    return _viocePlayer;
 }
 @end

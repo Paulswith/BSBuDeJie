@@ -20,7 +20,8 @@
 #define newKey Essence_video_new
 #define moreKey Essence_video_more
 
-static NSString * const ID = @"cellVideo";
+
+static NSString * const ID = @"BSVideoTableView";
 @interface BSVideoTableView ()
 {
     NSIndexPath *_indexPath;
@@ -29,7 +30,6 @@ static NSString * const ID = @"cellVideo";
 }
 
 @property(strong,nonatomic) NSMutableArray *allModelArray;
-
 @end
 
 @implementation BSVideoTableView
@@ -56,11 +56,13 @@ static NSString * const ID = @"cellVideo";
     cell.contentVideoView.tag = indexPath.row;
     cell.cellItems = model;
     return cell;
+    
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     BSEssenceAllModel *model = _allModelArray[indexPath.row];
     return model.row_height;
 }
+
 #pragma mark - loadData
 - (void)loadDataWithKey:(NSString *)key {
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];

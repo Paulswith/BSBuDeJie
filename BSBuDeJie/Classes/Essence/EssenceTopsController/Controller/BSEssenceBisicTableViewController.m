@@ -17,6 +17,8 @@ static CGFloat const topInset = 35 + 35;   //另外的35是因为下拉加的高
 static CGFloat const tabBarHeight = 49;
 static CGFloat const bottomInset = topInset + tabBarHeight;   //顶部偏移量 + 底部tabbar 自行调整,来展示
 
+
+
 @interface BSEssenceBisicTableViewController ()
 
 @end

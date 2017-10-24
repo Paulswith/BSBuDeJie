@@ -14,9 +14,11 @@
 #import "BSEssenceBaseCell.h"
 #import "BSDownload.h"
 
+
 #define newKey Essence_photo_new
 #define moreKey Essence_photo_more
-static NSString * const ID = @"cellVideo";
+static NSString * const ID = @"BSPhotoTableView";
+
 @interface BSPhotoTableView ()
 @property(strong,nonatomic) NSMutableArray *allModelArray;
 @end

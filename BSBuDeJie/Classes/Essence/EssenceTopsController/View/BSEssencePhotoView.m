@@ -35,11 +35,10 @@
         [self.gifIcon removeFromSuperview];
         [self.imageView sd_setImageWithURL:ImageURL completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
             if (photoItems.larger_pic) {
-                CGFloat clipWidth = screenW - 20; //采用默认宽度
                 //如果是大图就进行裁剪下,根据frame的矩形,没错,就是要高度而已~ 这里是主线程!
-                CGFloat clipHeight = photoItems.contentViewFrame.size.height;
-                UIGraphicsBeginImageContextWithOptions(CGSizeMake(clipWidth, clipHeight), NO, 0);
-                UIBezierPath *path = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, clipWidth, clipHeight)];
+                // 照片的宽度不变, 高度调整为屏幕高度rect
+                UIGraphicsBeginImageContextWithOptions(CGSizeMake(image.width, screenH), NO, 0);
+                UIBezierPath *path = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, image.width, screenH)];
                 [path addClip];
                 [image drawAtPoint:CGPointZero];
                 image = UIGraphicsGetImageFromCurrentImageContext();

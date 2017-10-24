@@ -25,7 +25,7 @@ static CGFloat const playBtnSideLength = 60.0f;
 @property (nonatomic, strong) UIButton *playOrPauseBtn;
 @property (nonatomic, strong) UILabel *totalDurationLabel;
 @property (nonatomic, strong) UILabel *progressLabel;
-@property (nonatomic, strong) XLSlider *slider;
+
 @property (nonatomic, strong) UIWindow *keyWindow;
 @property (nonatomic, strong) UIActivityIndicatorView *activityIndicatorView;
 @property (nonatomic, assign) CGRect playerOriginalFrame;

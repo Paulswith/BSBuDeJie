@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface BSEssenceBisicTableViewController : UITableViewController
+
+//+ (instancetype)shareInstanceValue;1
+
 //双击刷新 交给子类来实现 
 - (void)doubleReloadData;
 /*下拉加载*/
