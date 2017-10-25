@@ -45,7 +45,8 @@
     [self setupControlView];
     //1 设置顶部的按钮
     [self setupTopSwitchView];
-    [self topBtnTapAction:_topBtnPlaceView.subviews[0]]; //进入控制器的时候,保持选中第一个状态
+    
+    [self topBtnTapAction:_topBtnPlaceView.subviews[0] shouldReload:YES]; //进入控制器的时候,保持选中第一个状态
     //2 监听tabbar点击
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tabBarDidRepeastTap:) name:BSTabBarRepeastDidTap object:nil];
 }
@@ -96,16 +97,19 @@
 
 #pragma makr ---------------------
 #pragma mark - crollViewdelegate
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
-    //确实存在拖拽的情况, 再调用如下方法, 此代理才是正确的打开方式
-    NSInteger indexTag = scrollView.contentOffset.x / screenW;
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    NSInteger indexTag = scrollView.contentOffset.x / screenW;   //
+//    NSLog(@"scrollViewDidEndDecelerating : %@,index=%ld",NSStringFromCGPoint(scrollView.contentOffset),indexTag);
     UIButton *indexBtn = _topBtnPlaceView.subviews[indexTag];
-    [self topBtnTapAction:indexBtn]; // 模仿点击按钮来实现
+    [self topBtnTapAction:indexBtn shouldReload:NO]; // 模仿点击按钮来实现
 }
 
 #pragma mark - 按钮的点击事件,根据tag判断
-- (void)topBtnTapAction:(UIButton *)btn {
-    if (btn == _selectBtn) {
+- (void)topBtnTapAction:(UIButton *)sender {
+    [self topBtnTapAction:sender shouldReload:YES];
+}
+- (void)topBtnTapAction:(UIButton *)btn shouldReload:(BOOL)reload {
+    if (reload == YES && btn == _selectBtn) {
         [[self getcurrentSubVCWithIndex:btn.tag] doubleReloadData];
     }
     //点击切换背景色的逻辑
@@ -143,6 +147,9 @@
 }
 
 - (BSEssenceBisicTableViewController *)getcurrentSubVCWithIndex:(NSInteger)index {
+    if (index > _topBtnVCArray.count) {
+        return nil;
+    }
     return _topBtnVCArray[index];
 }
 - (void)dealloc {

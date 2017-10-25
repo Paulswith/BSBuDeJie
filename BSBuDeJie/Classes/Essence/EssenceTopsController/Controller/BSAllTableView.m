@@ -17,6 +17,7 @@
 #import <AFNetworking/AFNetworking.h>
 #import <MJExtension/MJExtension.h>
 #import "XLSlider.h"
+#import "BSPlayerBoxes.h"
 
 
 #define newKey Essence_all_new
@@ -209,10 +210,11 @@ static NSString * const ID = @"BSAllTableView";
 
 #pragma mark - lazyLoad
 - (AVPlayer *)viocePlayer {
-    if (!_viocePlayer) {
-        _viocePlayer = [[AVPlayer alloc] init];
-    }
-    return _viocePlayer;
+//    if (!_viocePlayer) {
+//        _viocePlayer = [[AVPlayer alloc] init];
+//    }
+//    return _viocePlayer;
+    return [BSPlayerBoxes shareInstance].viocePlayer;
 }
 
 @end

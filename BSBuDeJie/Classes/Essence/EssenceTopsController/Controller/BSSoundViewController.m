@@ -16,6 +16,7 @@
 #import "BSDownload.h"
 #import "BSEssenceBaseCell.h"
 #import <AVFoundation/AVFoundation.h>
+#import "BSPlayerBoxes.h"
 
 
 #define newKey Essence_sound_new
@@ -144,9 +145,10 @@ static NSString * const ID = @"BSSoundViewController";
     return _allModelArray;
 }
 - (AVPlayer *)viocePlayer {
-    if (!_viocePlayer) {
-        _viocePlayer = [AVPlayer new];
-    }
-    return _viocePlayer;
+//    if (!_viocePlayer) {
+//        _viocePlayer = [AVPlayer new];
+//    }
+//    return _viocePlayer;
+    return [BSPlayerBoxes shareInstance].viocePlayer;
 }
 @end

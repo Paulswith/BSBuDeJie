@@ -30,7 +30,7 @@ static CGFloat const playBtnSideLength = 60.0f;
 @property (nonatomic, strong) UIActivityIndicatorView *activityIndicatorView;
 @property (nonatomic, assign) CGRect playerOriginalFrame;
 @property (nonatomic, strong) UIButton *zoomScreenBtn;
-
+@property (nonatomic, strong) XLSlider *slider;
 @property (nonatomic, strong) AVPlayerItem *playerItem;
 @property (nonatomic, strong) AVPlayerLayer *playerLayer;
 /**video player*/
